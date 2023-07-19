@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:otherViewModel="clr-namespace:Console.ViewModel.OtherViewModel"
+             x:Class="Console.View.Other.ProxyPage"
+             Title="ProxyPage"
+             x:DataType="otherViewModel:ProxyPageViewModel">
+    <Grid RowDefinitions="Auto,*">
+
+        <Grid BackgroundColor="White" Grid.Row="0" >
+            <Label Text="设备管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,5,0,8"/>
+            <Polyline Points="33,10 25,18 33,26"
+                      Stroke="black"
+                      StrokeThickness="2">
+                <Polyline.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToDeviceCommand}" />
+                </Polyline.GestureRecognizers>
+            </Polyline>
+        </Grid>
+    </Grid>
+</ContentPage>

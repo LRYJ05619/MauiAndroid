@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Console.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.FlyoutBehavior="Disabled"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:startup="clr-namespace:Console.View.Startup"
+    xmlns:main="clr-namespace:Console.View.Main"
+    xmlns:other="clr-namespace:Console.View.Other"
+    Shell.NavBarIsVisible="False">
+
+    <!--状态栏透明-->
+    <Shell.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="Transparent" StatusBarStyle="DarkContent" />
+    </Shell.Behaviors>
+
+    <ShellContent 
+        Title="LoadingPage"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startup:LoadingPage}"
+        Route="LoadingPage" />
+
+    <ShellContent
+        Title="LoginPage"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startup:LoginPage}"
+        Route="LoginPage" />
+
+    <FlyoutItem Route="MainPage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="控制台" ContentTemplate="{DataTemplate main:ConsolePage}" Route="ConsolePage"/>
+        <ShellContent Title="报警管理" ContentTemplate="{DataTemplate main:NotifyPage}" Route="NotifyPage"/>
+        <ShellContent Title="设备管理" ContentTemplate="{DataTemplate main:DevicePage}" Route="DevicePage"/>
+        <ShellContent Title="我的" ContentTemplate="{DataTemplate main:UserPage}" Route="UserPage"/>
+    </FlyoutItem>
+
+    <ShellContent
+        Title="ProxyPage"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate other:ProxyPage}"
+        Route="ProxyPage" />
+
+</Shell>

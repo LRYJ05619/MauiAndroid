@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dashboardViewModel="clr-namespace:Console.ViewModel.MainViewModel"
+             xmlns:model="clr-namespace:Console.Model"
+             xmlns:mainViewModel="clr-namespace:Console.ViewModel.MainViewModel"
+             x:Class="Console.View.Main.DevicePage"
+             Title="DevicePage"
+             x:DataType="mainViewModel:DevicePageViewModel">
+
+    <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource Secondary}">
+
+        <Grid BackgroundColor="White"  Grid.Row="0" >
+            <Label Text="设备管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,5,0,8"/>
+        </Grid>
+
+        <RefreshView Grid.Row="1" 
+                     IsRefreshing="{Binding IsRefreshing}" 
+                     Command="{Binding BasicInfoGetCommand}" 
+                     RefreshColor="{StaticResource Primary}">
+            <CollectionView BackgroundColor="Transparent"
+                            ItemsSource="{Binding RequirdISD2180Info}"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:RequirdISD2180Info">
+                        <Grid Padding="0,8">
+
+                            <Frame BorderColor="Transparent" 
+                                   BackgroundColor="White" 
+                                   Margin="15,0,15,0">
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                          Command="{Binding Source={RelativeSource 
+                                        AncestorType={x:Type dashboardViewModel:DevicePageViewModel}},
+                                        Path=GoToProxyCommand}"/>
+                                </Frame.GestureRecognizers>
+
+                                <Grid Padding="0">
+
+                                    <VerticalStackLayout Padding="10,0"
+                                                         VerticalOptions="Center">
+                                        <Label Text="{Binding project,StringFormat='所属项目：{0}'}"/>
+                                        <Label Text="{Binding id,StringFormat='设备I D：{0}'}"/>
+                                        <Label Text="{Binding name,StringFormat='设备名称：{0}'}"/>
+                                        <Label Text="{Binding position,StringFormat='地理位置：{0}'}"/>
+                                        <Label Text="{Binding createdTime,StringFormat='创建时间：{0}'}"/>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>

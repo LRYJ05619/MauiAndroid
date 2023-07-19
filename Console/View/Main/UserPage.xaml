@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mainViewModel="clr-namespace:Console.ViewModel.MainViewModel"
+             x:Class="Console.View.Main.UserPage"
+             Title="UserPage"
+             x:DataType="mainViewModel:UserPageViewModel">
+
+    <StackLayout>
+        <Button Text="退出登录" Command="{Binding SignOutCommand}" BackgroundColor="Red"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:DataType="mainViewModel:ConsolePageViewModel"
+             x:Class="Console.View.Main.ConsolePage"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+             xmlns:mainViewModel="clr-namespace:Console.ViewModel.MainViewModel">
+
+    <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource Secondary}">
+
+        <Grid BackgroundColor="White"  Grid.Row="0" >
+            <Label Text="控制台" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,5,0,8"/>
+        </Grid>
+
+        <RefreshView Grid.Row="1" 
+                     IsRefreshing="{Binding IsRefreshing}" 
+                     Command="{Binding BasicInfoGetCommand}" 
+                     RefreshColor="{StaticResource Primary}">
+            <ScrollView>
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,*" ColumnDefinitions="*,*">
+                    <Label Text="设备统计" TextColor="Black" FontSize="18" HorizontalOptions="FillAndExpand" Padding="25,5,0,8"/>
+
+                    <Frame Grid.Row="1" Grid.ColumnSpan="2" BorderColor="Transparent" BackgroundColor="White" Margin="15,0,15,0">
+                        <Grid Padding="0" ColumnDefinitions="2*,*,3*">
+                            <VerticalStackLayout >
+                                <Label Text="在线设备" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="离线设备" FontSize="16" Margin="8,25,0,0"/>
+                                <Label Text="报警设备" FontSize="16" Margin="8,25,0,0"/>
+                            </VerticalStackLayout>
+
+                        </Grid>
+                    </Frame>
+
+                    <Label Grid.Row="2" Text="设备统计" TextColor="Black" FontSize="18" HorizontalOptions="FillAndExpand" Padding="25,5,0,8"/>
+
+                    <Frame Grid.Row="3" Grid.ColumnSpan="2" BorderColor="Transparent" BackgroundColor="White" Margin="15,0,15,0">
+                        <Grid Padding="0" ColumnDefinitions="2*,*,3*">
+                            <VerticalStackLayout >
+                                <Label Text="报警设备数" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="已处理报警" FontSize="16" Margin="8,25,0,0"/>
+                                <Label Text="未处理报警" FontSize="16" Margin="8,25,0,0"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="1" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="{Binding RequirdAkertsCount.AllInactive}" FontSize="16" Margin="8,25,0,0"/>
+                                <Label Text="{Binding RequirdAkertsCount.AllActive}" FontSize="16" Margin="8,25,0,0"/>
+                            </VerticalStackLayout>
+
+                            <lvc:PieChart HeightRequest="125"
+                                Grid.Column="2"
+                                Series="{Binding SolveSeries}"
+                                MaxAngle="360"
+                                InitialRotation="-225"
+                                Total="100">
+                            </lvc:PieChart>
+
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="4" Grid.ColumnSpan="2" BorderColor="Transparent" BackgroundColor="White" Margin="15,10,15,0">
+                        <Grid Padding="0" ColumnDefinitions="2*,*,5*">
+                            <VerticalStackLayout>
+                                <Label Text="轻度预警" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="中度预警" FontSize="16" Margin="8,25,0,0"/>
+                                <Label Text="重度预警" FontSize="16" Margin="8,25,0,0"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="{Binding RequirdAkertsCount.AllLeave1}" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="{Binding RequirdAkertsCount.AllLeave2}" FontSize="16" Margin="8,25,0,0"/>
+                                <Label Text="{Binding RequirdAkertsCount.AllLeave3}" FontSize="16" Margin="8,25,0,0"/>
+                            </VerticalStackLayout>
+
+                            <lvc:PieChart HeightRequest="130"
+                                          Grid.Column="2"
+                                          Series="{Binding WarningSeries}"
+                                          InitialRotation="-225"
+                                          LegendPosition="Right"
+                                          LegendTextPaint="{Binding LegendPaint}"
+                                          LegendTextSize="30">
+                            </lvc:PieChart>
+
+                        </Grid>
+                    </Frame>
+
+                </Grid>
+            </ScrollView>
+        </RefreshView>
+
+    </Grid>
+</ContentPage>
