@@ -55,6 +55,10 @@
         </member>
         <member name="T:Console.ViewModel.OtherViewModel.ProxyPageViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Console.ViewModel.OtherViewModel.ProxyPageViewModel.SensorInfo">
+            <inheritdoc cref="F:Console.ViewModel.OtherViewModel.ProxyPageViewModel.sensorInfo"/>
         </member>
         <member name="F:Console.ViewModel.OtherViewModel.ProxyPageViewModel.goToDeviceCommand">
             <summary>The backing field for <see cref="P:Console.ViewModel.OtherViewModel.ProxyPageViewModel.GoToDeviceCommand"/>.</summary>
@@ -204,6 +208,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LegendPaint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LegendPaint" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SensorInfo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SensorInfo" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserName">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserName" generated properties.</summary>
         </member>
@@ -236,6 +243,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LegendPaint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LegendPaint" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SensorInfo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SensorInfo" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserName">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserName" generated properties.</summary>

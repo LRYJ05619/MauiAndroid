@@ -38,7 +38,7 @@ namespace Console.ViewModel.MainViewModel
             await Shell.Current.GoToAsync($"//{nameof(ProxyPage)}", true,
                 new Dictionary<string, object>
                 {
-                    { "RequirdISD2180Info", requirdIsd2180 }
+                    { "SensorInfo", requirdIsd2180 }
                 });
         }
     }

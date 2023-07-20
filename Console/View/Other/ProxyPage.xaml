@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:otherViewModel="clr-namespace:Console.ViewModel.OtherViewModel"
+             xmlns:model="clr-namespace:Console.Model"
              x:Class="Console.View.Other.ProxyPage"
              Title="ProxyPage"
              x:DataType="otherViewModel:ProxyPageViewModel">
-    <Grid RowDefinitions="Auto,*">
+    <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource Secondary}">
 
         <Grid BackgroundColor="White" Grid.Row="0" >
             <Label Text="设备管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,5,0,8"/>
@@ -17,5 +18,33 @@
                 </Polyline.GestureRecognizers>
             </Polyline>
         </Grid>
+
+        <CollectionView Grid.Row="1"
+                        BackgroundColor="Transparent"
+                        ItemsSource="{Binding SensorInfo.sensors}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:RequirdSensorInfo">
+                    <Grid Padding="0,8">
+
+                        <Frame BorderColor="Transparent" 
+                               BackgroundColor="White" 
+                               Margin="15,0,15,0">
+
+                            <Grid Padding="0">
+
+                                <VerticalStackLayout Padding="10,0"
+                                                     VerticalOptions="Center">
+                                    <Label Text="{Binding index,StringFormat='编号：{0}'}"/>
+                                    <Label Text="{Binding type,StringFormat='类型：{0}'}"/>
+                                    <Label Text="{Binding name,StringFormat='设备名称：{0}'}"/>
+                                    <Label Text="{Binding position,StringFormat='地理位置：{0}'}"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console.Model
 {
-    public class RequirdAlertData
+    public class UntreatedAlertData
     {
         public string project { get; set; }
         public string sensorName { get; set; }
@@ -15,6 +15,18 @@ namespace Console.Model
         public double value { get; set; }
         public string leave { get; set; }
         public string time { get; set; }
+    }
+
+    public class TreatedAlertData
+    {
+        public string project { get; set; }
+        public string sensorName { get; set; }
+        public string deviceType { get; set; }
+        public string property { get; set; }
+        public double value { get; set; }
+        public string leave { get; set; }
+        public string time { get; set; }
+        public AlertsDatumMetadata metadata { get; set; }
     }
 
     public class Notify
