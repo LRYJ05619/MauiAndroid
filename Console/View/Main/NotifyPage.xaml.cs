@@ -3,13 +3,14 @@ using Console.ViewModel.MainViewModel;
 
 namespace Console.View.Main;
 
-public partial class NotifyPage : ContentPage
+public partial class NotifyPage : TabbedPage
 {
-    public NotifyPage(NotifyPageViewModel notifyPageViewModel)
+	public NotifyPage(NotifyPageViewModel notifyPageViewModel)
 	{
-        InitializeComponent();
-        BindingContext = notifyPageViewModel;
-    }
+		InitializeComponent();
+		BindingContext = notifyPageViewModel;
+	}
+
     private static bool isBackPressed = false;
     private static System.Timers.Timer backButtonTimer = new System.Timers.Timer();
 

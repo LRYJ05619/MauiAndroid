@@ -1,74 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:dashboardViewModel="clr-namespace:Console.ViewModel.MainViewModel"
              xmlns:model="clr-namespace:Console.Model"
              xmlns:mainViewModel="clr-namespace:Console.ViewModel.MainViewModel"
+             xmlns:other="clr-namespace:Console.View.Other"
              x:Class="Console.View.Main.NotifyPage"
              Title="NotifyPage"
              x:DataType="mainViewModel:NotifyPageViewModel">
 
-    <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource Secondary}">
-
-        <Grid BackgroundColor="White"  Grid.Row="0" >
-            <Label Text="报警管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,5,0,8"/>
-        </Grid>
-
-        <CarouselView Grid.Row="1"
-                      ItemsSource="{Binding RequirdISD2180Info}"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand"
-                      PeekAreaInsets="60">
-
-            <CarouselView.ItemTemplate>
-                <DataTemplate x:DataType="model:RequirdISD2180Info">
-                    <Grid>
-                        <!-- Place the content of each page here -->
-                        <Label Text="{Binding project}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                    </Grid>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
-
-        <IndicatorView Grid.Row="0"
-                       IndicatorColor="Gray"
-                       SelectedIndicatorColor="Black"
-                       IndicatorSize="8"
-                       SelectedIndicatorSize="10"
-                       ItemsSource="{Binding RequirdISD2180Info}"
-                       SelectedItem="{Binding CurrentPage}"/>
-
-        <RefreshView Grid.Row="1" 
-                    IsRefreshing="{Binding IsRefreshing}" 
-                    Command="{Binding BasicInfoGetCommand}" 
-                    RefreshColor="{StaticResource Primary}">
-            <CollectionView BackgroundColor="Transparent"
-                                ItemsSource="{Binding RequirdISD2180Info}"
-                                SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:RequirdISD2180Info">
-                        <Grid Padding="10">
-                            <Frame BorderColor="Transparent" 
-                                   BackgroundColor="White" 
-                                   Margin="20,0,20,0">
-
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer CommandParameter="{Binding .}"
-                                                          Command="{Binding Source={RelativeSource 
-                                        AncestorType={x:Type dashboardViewModel:NotifyPageViewModel}},
-                                        Path=BasicInfoGetCommand}"/>
-                                </Frame.GestureRecognizers>
-
-
-                                <Grid Padding="0"
-                                      ColumnDefinitions="125, *">
-                                    <Label Text="{Binding project}"/>
-                                </Grid>
-                            </Frame>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </RefreshView>
-    </Grid>
-</ContentPage>
+</TabbedPage>

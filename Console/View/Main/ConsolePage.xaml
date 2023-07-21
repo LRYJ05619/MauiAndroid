@@ -9,7 +9,7 @@
     <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource Secondary}">
 
         <Grid BackgroundColor="White"  Grid.Row="0" >
-            <Label Text="控制台" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,5,0,8"/>
+            <Label Text="控制台" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,8"/>
         </Grid>
 
         <RefreshView Grid.Row="1" 

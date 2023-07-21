@@ -22,7 +22,7 @@ namespace Console.ViewModel.MainViewModel
     public partial class ConsolePageViewModel : BaseViewModel
     {
         [ObservableProperty]
-        private IPaint<LiveChartsCore.SkiaSharpView.Drawing.SkiaSharpDrawingContext> legendPaint;
+        private IPaint<LiveChartsCore.SkiaSharpView.Drawing.SkiaSharpDrawingContext> _legendPaint;
 
         //饼图绘制
         public IEnumerable<ISeries> SolveSeries { get; set; }

@@ -1,5 +1,8 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using System.Diagnostics;
+using CommunityToolkit.Mvvm.Input;
 using Console.View.Startup;
+using Android.Content;
+using Android.Provider;
 
 namespace Console.ViewModel.MainViewModel
 {
@@ -14,5 +17,23 @@ namespace Console.ViewModel.MainViewModel
             }
             await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
         }
+
+        [RelayCommand]
+        void GoToSet()
+        {
+            try
+            {
+                var intent = new Intent(Settings.ActionChannelNotificationSettings);
+                intent.PutExtra(Settings.ExtraAppPackage, Android.App.Application.Context.PackageName);
+                intent.PutExtra(Settings.ExtraChannelId, "Plugin.LocalNotification.GENERAL");
+                intent.AddFlags(ActivityFlags.NewTask); // 添加 FLAG_ACTIVITY_NEW_TASK 标志
+                Android.App.Application.Context.StartActivity(intent);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
+
     }
 }

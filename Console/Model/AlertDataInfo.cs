@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Console.Model
 {
+    public class RequirdAlertData
+    {
+        public List<UntreatedAlertData> untreat { get; set; }
+        public List<TreatedAlertData> treat { get; set; }
+    }
     public class UntreatedAlertData
     {
         public string project { get; set; }

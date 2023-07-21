@@ -7,6 +7,16 @@
              x:DataType="mainViewModel:UserPageViewModel">
 
     <StackLayout>
-        <Button Text="退出登录" Command="{Binding SignOutCommand}" BackgroundColor="Red"/>
+
+        <Button Text="打开通知" 
+                Command="{Binding GoToSetCommand}" 
+                BackgroundColor="{StaticResource Primary}"
+                Margin="20"/>
+
+        <Button Text="退出登录" 
+                Command="{Binding SignOutCommand}" 
+                BackgroundColor="Red"
+                Margin="20"/>
+
     </StackLayout>
 </ContentPage>
