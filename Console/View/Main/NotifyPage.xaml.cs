@@ -1,15 +1,16 @@
 using CommunityToolkit.Maui.Alerts;
 using Console.ViewModel.MainViewModel;
+using Microsoft.Maui.Controls;
 
 namespace Console.View.Main;
 
-public partial class NotifyPage : TabbedPage
+public partial class NotifyPage : ContentPage
 {
 	public NotifyPage(NotifyPageViewModel notifyPageViewModel)
 	{
 		InitializeComponent();
 		BindingContext = notifyPageViewModel;
-	}
+    }
 
     private static bool isBackPressed = false;
     private static System.Timers.Timer backButtonTimer = new System.Timers.Timer();

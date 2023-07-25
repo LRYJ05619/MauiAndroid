@@ -31,9 +31,6 @@
 
     <FlyoutItem Route="MainPage" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="控制台" ContentTemplate="{DataTemplate main:ConsolePage}" Route="ConsolePage"/>
-        <Tab>
-
-        </Tab>
         <ShellContent Title="报警管理" ContentTemplate="{DataTemplate main:NotifyPage}" Route="NotifyPage"/>
         <ShellContent Title="设备管理" ContentTemplate="{DataTemplate main:DevicePage}" Route="DevicePage"/>
         <ShellContent Title="我的" ContentTemplate="{DataTemplate main:UserPage}" Route="UserPage"/>
@@ -44,20 +41,6 @@
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate other:ProxyPage}"
-        Route="ProxyPage" />
-
-    <ShellContent
-        Title="UntreatedPage"
-        FlyoutItemIsVisible="False"
-        Shell.FlyoutBehavior="Disabled"
-        ContentTemplate="{DataTemplate other:UntreatedPage}"
-        Route="ProxyPage" />
-
-    <ShellContent
-        Title="TreatedPage"
-        FlyoutItemIsVisible="False"
-        Shell.FlyoutBehavior="Disabled"
-        ContentTemplate="{DataTemplate other:TreatedPage}"
         Route="ProxyPage" />
 
 </Shell>

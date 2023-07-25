@@ -76,10 +76,7 @@
 	  <MauiXaml Update="View\Main\UserPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Other\TreatedPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="View\Other\UntreatedPage.xaml">
+	  <MauiXaml Update="View\Other\Test.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Startup\LoadingPage.xaml">

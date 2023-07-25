@@ -46,9 +46,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<UserPage>();
         builder.Services.AddSingleton<ProxyPage>();
 
-        builder.Services.AddSingleton<UntreatedPage>();
-        builder.Services.AddSingleton<TreatedPage>();
-
         //View Models
         builder.Services.AddSingleton<LoginPageViewModel>();
         builder.Services.AddSingleton<LoadingPageViewModel>();

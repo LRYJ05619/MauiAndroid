@@ -41,21 +41,6 @@ namespace Console.ViewModel.MainViewModel
 
             //刷新时间
             StartTimer(60000);
-            
-            // 默认选中第一个分页
-            CurrentTabIndex = 0;
-
-            // 初始化 RefreshCommand
-            RefreshCommand = new AsyncRelayCommand(RefreshAsync);
-        }
-        private async Task RefreshAsync()
-        {
-            // 在这里更新分页内容或其他数据
-            // 此处省略具体逻辑
-            await Task.Delay(2000);
-
-            // 停止下拉刷新
-            IsRefreshing = false;
         }
     }
 }

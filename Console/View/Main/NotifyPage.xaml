@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:Console.Model"
              xmlns:mainViewModel="clr-namespace:Console.ViewModel.MainViewModel"
@@ -8,4 +8,81 @@
              Title="NotifyPage"
              x:DataType="mainViewModel:NotifyPageViewModel">
 
-</TabbedPage>
+    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                 Command="{Binding BasicInfoGetCommand}"
+                 RefreshColor="{StaticResource Primary}">
+        <ScrollView>
+            <Grid RowDefinitions="Auto,Auto,*" BackgroundColor="{StaticResource Secondary}">
+                <Grid BackgroundColor="White">
+                    <Label Text="报警管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,18"></Label>
+                </Grid>
+
+                <CarouselView Grid.Row="2" ItemsSource="{Binding RequirdAlertDatas}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate x:DataType="model:RequirdAlertData">
+                            <StackLayout>
+                                <!-- First CollectionView -->
+                                <CollectionView>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="model:RequirdAlertData">
+                                            <Grid Padding="0,8">
+
+                                                <Frame BorderColor="Transparent"
+                                                       BackgroundColor="White"
+                                                       Margin="15,0,15,0">
+
+                                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
+
+                                                        <VerticalStackLayout Padding="10,0"
+                                                             VerticalOptions="Center">
+                                                            <Label Text="{Binding untreatedproject,StringFormat='所属项目：{0}'}"/>
+                                                            <Label Text="{Binding untreatedsensorName,StringFormat='设备名称：{0}'}"/>
+                                                            <Label Text="{Binding untreateddeviceType,StringFormat='设备类型：{0}'}"/>
+                                                            <Label Text="{Binding untreatedproperty,StringFormat='报警数量：{0}'}"/>
+                                                            <Label Text="{Binding untreatedleave,StringFormat='报警等级：{0}'}"/>
+                                                            <Label Text="{Binding untreatedtime,StringFormat='报警时间：{0}'}"/>
+                                                        </VerticalStackLayout>
+
+                                                    </Grid>
+                                                </Frame>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                                <!-- Second CollectionView -->
+                                <CollectionView>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="model:RequirdAlertData">
+                                            <Grid Padding="0,8">
+
+                                                <Frame BorderColor="Transparent"
+                                                       BackgroundColor="White"
+                                                         Margin="15,0,15,0">
+
+                                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
+
+                                                        <VerticalStackLayout Padding="10,0"
+                                                             VerticalOptions="Center">
+
+                                                            <Label Text="{Binding treatedproject,StringFormat='所属项目：{0}'}"/>
+                                                            <Label Text="{Binding treatedsensorName,StringFormat='设备名称：{0}'}"/>
+                                                            <Label Text="{Binding treateddeviceType,StringFormat='设备类型：{0}'}"/>
+                                                            <Label Text="{Binding treatedproperty,StringFormat='报警数量：{0}'}"/>
+                                                            <Label Text="{Binding treatedleave,StringFormat='报警等级：{0}'}"/>
+                                                            <Label Text="{Binding treatedtime,StringFormat='报警时间：{0}'}"/>
+                                                        </VerticalStackLayout>
+                                                    </Grid>
+                                                </Frame>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+
+</ContentPage>

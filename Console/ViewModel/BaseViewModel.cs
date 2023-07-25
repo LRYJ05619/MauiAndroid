@@ -8,7 +8,9 @@ using LiveChartsCore.Defaults;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 
 namespace Console.ViewModel
@@ -25,18 +27,17 @@ namespace Console.ViewModel
         //报警数量
         [ObservableProperty]
         private RequirdAkertsCount _requirdAkertsCount = new RequirdAkertsCount();
-        //报警信息未处理
-        [ObservableProperty]
-        private List<UntreatedAlertData>  _untreatedAlertDatas = new List<UntreatedAlertData>();
-        //报警信息已处理
-        [ObservableProperty]
-        private List<TreatedAlertData> _treatedAlertDatas = new List<TreatedAlertData>();
+        
         //ISD2180设备
         [ObservableProperty]
         private List<RequirdISD2180Info> _requirdISD2180Info = new List<RequirdISD2180Info>();
 
         private Timer timer;
         private bool isTimerRunning = false;
+
+        //报警信息
+        [ObservableProperty] 
+        private List<RequirdAlertData> _requirdAlertDatas;
 
         //报警数量
         public ObservableValue Allleave1Value { get; set; }
@@ -109,6 +110,7 @@ namespace Console.ViewModel
                 {
                     await Shell.Current.DisplayAlert("网络问题", $"检查你的网络并重试", "3OK");
                 }
+
                 //解析储存的用户信息
                 var reserve = Preferences.Get(nameof(App.UserReserve), string.Empty);
                 var userReserve = JsonConvert.DeserializeObject<UserReserve>(reserve);
@@ -129,62 +131,72 @@ namespace Console.ViewModel
                 //报警信息获取
                 var alertsDatumList = await alertsDataGetReponsitory.AlertsDataGet(userReserve);
 
-                if (alertsDatumList.Any(alertsDatum => alertsDatum.metadata == null))
+                foreach (var alertsData in alertsDatumList)
                 {
-                    UntreatedAlertDatas = alertsDatumList.Select(alertsDatum => new UntreatedAlertData
+                    if (alertsData.metadata == null)
                     {
-                        project = projectsList.FirstOrDefault(project => project.id == alertsDatum.project_id)?.name,
-                        sensorName = isd2180sList
-                            .Where(isd => isd.sensors != null) // 添加Where条件，过滤掉sensors为null的元素
-                            .SelectMany(isd =>
-                                isd.sensors.Where(sensor => sensor.id == alertsDatum.sensor_id)
-                                    .Select(sensor => sensor.name))
-                            .FirstOrDefault(),
-                        deviceType = deviceTypeList
-                            .FirstOrDefault(deviceType => deviceType.@class == alertsDatum.sensor_type)?.name,
-                        property = alertsDatum.property,
-                        value = alertsDatum.value,
-                        leave = JugeLeave(alertsDatum.level),
-                        time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
-                    }).ToList();
-                }
-                else
-                {
-                    TreatedAlertDatas = alertsDatumList.Select(alertsDatum => new TreatedAlertData
-                    {
-                        // Write properties based on your requirements
-                        // Example:
-                        project = projectsList.FirstOrDefault(project => project.id == alertsDatum.project_id)?.name,
-                        sensorName = isd2180sList
-                            .Where(isd => isd.sensors != null)
-                            .SelectMany(isd => isd.sensors.Where(sensor => sensor.id == alertsDatum.sensor_id).Select(sensor => sensor.name))
-                            .FirstOrDefault(),
-                        deviceType = deviceTypeList.FirstOrDefault(deviceType => deviceType.@class == alertsDatum.sensor_type)?.name,
-                        property = alertsDatum.property,
-                        value = alertsDatum.value,
-                        leave = JugeLeave(alertsDatum.level),
-                        time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
-                        // Include AlertsDatumMetadata here
-                        metadata = alertsDatum.metadata,
-                    }).ToList();
-                }
-
-                RequirdISD2180Info = isd2180sList.Select(isd2180s => new RequirdISD2180Info
-                {
-                    project = projectsList.FirstOrDefault(project => project.id == isd2180s.project_id)?.name,
-                    id = isd2180s.device_id,
-                    name = isd2180s.name,
-                    position = isd2180s.position,
-                    createdTime = isd2180s.metadata.created_time,
-                    sensors = isd2180s.sensors?.Select(sensor =>
-                        new RequirdSensorInfo
+                        RequirdAlertDatas = alertsDatumList.Select(alertsDatum => new RequirdAlertData
                         {
-                            index = sensor.index,
-                            name = sensor.name,
-                            type = deviceTypeList.FirstOrDefault(deviceType => deviceType.@class == sensor.@class)?.name,
-                            position = sensor.position,
-                        }).ToList()
-                }).ToList();
+                            // Write properties based on your requirements
+                            // Example:
+                            untreatedproject = 
+                                projectsList.FirstOrDefault(project => project.id == alertsDatum.project_id)?.name,
+                            untreatedsensorName = isd2180sList
+                                .Where(isd => isd.sensors != null)
+                                .SelectMany(isd =>
+                                    isd.sensors.Where(sensor => sensor.id == alertsDatum.sensor_id)
+                                        .Select(sensor => sensor.name))
+                                .FirstOrDefault(),
+                            untreateddeviceType = deviceTypeList
+                                .FirstOrDefault(deviceType => deviceType.@class == alertsDatum.sensor_type)?.name,
+                            untreatedproperty = alertsDatum.property,
+                            untreatedvalue = alertsDatum.value,
+                            untreatedleave = JugeLeave(alertsDatum.level),
+                            untreatedtime = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
+                            // Include AlertsDatumMetadata here
+                            metadata = alertsDatum.metadata,
+                        }).ToList();
+                    }
+                    else
+                    {
+                        RequirdAlertDatas = alertsDatumList.Select(alertsDatum => new RequirdAlertData
+                        {
+                            treatedproject = 
+                                projectsList.FirstOrDefault(project => project.id == alertsDatum.project_id)?.name,
+                            treatedsensorName = isd2180sList
+                                .Where(isd => isd.sensors != null) // 添加Where条件，过滤掉sensors为null的元素
+                                .SelectMany(isd =>
+                                    isd.sensors.Where(sensor => sensor.id == alertsDatum.sensor_id)
+                                        .Select(sensor => sensor.name))
+                                .FirstOrDefault(),
+                            treateddeviceType = deviceTypeList
+                                .FirstOrDefault(deviceType => deviceType.@class == alertsDatum.sensor_type)?.name,
+                            treatedproperty = alertsDatum.property,
+                            treatedvalue = alertsDatum.value,
+                            treatedleave = JugeLeave(alertsDatum.level),
+                            treatedtime = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
+                        }).ToList();
+                    }
+
+                    RequirdISD2180Info = isd2180sList.Select(isd2180s => new RequirdISD2180Info
+                    {
+                        project = projectsList.FirstOrDefault(project => project.id == isd2180s.project_id)?.name,
+                        id = isd2180s.device_id,
+                        name = isd2180s.name,
+                        position = isd2180s.position,
+                        createdTime = isd2180s.metadata.created_time,
+                        sensors = isd2180s.sensors?.Select(sensor =>
+                            new RequirdSensorInfo
+                            {
+                                index = sensor.index,
+                                name = sensor.name,
+                                type = deviceTypeList
+                                    .FirstOrDefault(deviceType => deviceType.@class == sensor.@class)
+                                    ?.name,
+                                position = sensor.position,
+                            }).ToList()
+                    }).ToList();
+                }
             }
             catch (Exception ex)
             {

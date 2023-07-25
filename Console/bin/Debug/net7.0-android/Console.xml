@@ -17,14 +17,11 @@
         <member name="P:Console.ViewModel.BaseViewModel.RequirdAkertsCount">
             <inheritdoc cref="F:Console.ViewModel.BaseViewModel._requirdAkertsCount"/>
         </member>
-        <member name="P:Console.ViewModel.BaseViewModel.UntreatedAlertDatas">
-            <inheritdoc cref="F:Console.ViewModel.BaseViewModel._untreatedAlertDatas"/>
-        </member>
-        <member name="P:Console.ViewModel.BaseViewModel.TreatedAlertDatas">
-            <inheritdoc cref="F:Console.ViewModel.BaseViewModel._treatedAlertDatas"/>
-        </member>
         <member name="P:Console.ViewModel.BaseViewModel.RequirdISD2180Info">
             <inheritdoc cref="F:Console.ViewModel.BaseViewModel._requirdISD2180Info"/>
+        </member>
+        <member name="P:Console.ViewModel.BaseViewModel.RequirdAlertDatas">
+            <inheritdoc cref="F:Console.ViewModel.BaseViewModel._requirdAlertDatas"/>
         </member>
         <member name="F:Console.ViewModel.BaseViewModel.basicInfoGetCommand">
             <summary>The backing field for <see cref="P:Console.ViewModel.BaseViewModel.BasicInfoGetCommand"/>.</summary>
@@ -218,14 +215,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RequirdAkertsCount">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RequirdAkertsCount" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UntreatedAlertDatas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UntreatedAlertDatas" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TreatedAlertDatas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TreatedAlertDatas" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RequirdISD2180Info">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RequirdISD2180Info" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RequirdAlertDatas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RequirdAlertDatas" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LegendPaint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LegendPaint" generated properties.</summary>
@@ -263,14 +257,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RequirdAkertsCount">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RequirdAkertsCount" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UntreatedAlertDatas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UntreatedAlertDatas" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TreatedAlertDatas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TreatedAlertDatas" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RequirdISD2180Info">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RequirdISD2180Info" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RequirdAlertDatas">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RequirdAlertDatas" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LegendPaint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LegendPaint" generated properties.</summary>
