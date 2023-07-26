@@ -43,7 +43,6 @@ namespace Console.ViewModel
 
         private Timer timer;
         private bool isTimerRunning = false;
-        private long maxTimestamp = 0;
 
         //报警数量
         public ObservableValue Allleave1Value { get; set; }
@@ -142,22 +141,23 @@ namespace Console.ViewModel
 
                 Untreated = groupedAlerts.FirstOrDefault(g => g.Key == true)?
                     .Select(alertsDatum => new UntreatedAlertsData()
-                        {
-                            project = projectsList.FirstOrDefault(project => project.id == alertsDatum.project_id)
-                                ?.name,
-                            sensorName = isd2180sList
-                                .Where(isd => isd.sensors != null)
-                                .SelectMany(isd =>
-                                    isd.sensors.Where(sensor => sensor.id == alertsDatum.sensor_id)
-                                        .Select(sensor => sensor.name))
-                                .FirstOrDefault(),
-                            deviceType = deviceTypeList
-                                .FirstOrDefault(deviceType => deviceType.@class == alertsDatum.sensor_type)?.name,
-                            property = alertsDatum.property,
-                            value = alertsDatum.value,
-                            leave = JugeLeave(alertsDatum.level),
-                            time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
-                        }).ToList();
+                    {
+                        project = projectsList.FirstOrDefault(project => project.id == alertsDatum.project_id)
+                            ?.name,
+                        sensorName = isd2180sList
+                            .Where(isd => isd.sensors != null)
+                            .SelectMany(isd =>
+                                isd.sensors.Where(sensor => sensor.id == alertsDatum.sensor_id)
+                                    .Select(sensor => sensor.name))
+                            .FirstOrDefault(),
+                        deviceType = deviceTypeList
+                            .FirstOrDefault(deviceType => deviceType.@class == alertsDatum.sensor_type)?.name,
+                        property = alertsDatum.property,
+                        value = alertsDatum.value,
+                        leave = JugeLeave(alertsDatum.level),
+                        time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
+                        timestamp = alertsDatum.time,
+                    }).ToList();
 
                 Treated = groupedAlerts.FirstOrDefault(g => g.Key == false)?
                     .Select(alertsDatum => new TreatedAlertsData()
@@ -181,37 +181,47 @@ namespace Console.ViewModel
                     }).ToList();
 
                 RequirdISD2180Info = isd2180sList.Select(isd2180s => new RequirdISD2180Info
-                    {
-                        project = projectsList.FirstOrDefault(project => project.id == isd2180s.project_id)?.name,
-                        id = isd2180s.device_id,
-                        name = isd2180s.name,
-                        position = isd2180s.position,
-                        createdTime = isd2180s.metadata.created_time,
-                        sensors = isd2180s.sensors?.Select(sensor =>
-                            new RequirdSensorInfo
-                            {
-                                index = sensor.index,
-                                name = sensor.name,
-                                type = deviceTypeList
-                                    .FirstOrDefault(deviceType => deviceType.@class == sensor.@class)
-                                    ?.name,
-                                position = sensor.position,
-                            }).ToList()
-                    }).ToList();
-
-                var newMaxTimestamp = alertsDatumList.Max(alertsDatum => alertsDatum.time);
-
-                //当时间戳大于已储存的时间戳，报警
-                if (newMaxTimestamp > maxTimestamp)
                 {
-                    foreach (var alertsDatum in alertsDatumList.Where(alertsDatum =>
-                                 alertsDatum.time > maxTimestamp))
+                    project = projectsList.FirstOrDefault(project => project.id == isd2180s.project_id)?.name,
+                    id = isd2180s.device_id,
+                    name = isd2180s.name,
+                    position = isd2180s.position,
+                    createdTime = isd2180s.metadata.created_time,
+                    sensors = isd2180s.sensors?.Select(sensor =>
+                        new RequirdSensorInfo
+                        {
+                            index = sensor.index,
+                            name = sensor.name,
+                            type = deviceTypeList
+                                .FirstOrDefault(deviceType => deviceType.@class == sensor.@class)
+                                ?.name,
+                            position = sensor.position,
+                        }).ToList()
+                }).ToList();
+
+                if (Untreated != null)
+                {
+                    var newMaxTimestamp = Untreated.Max(alertsDatum => alertsDatum.timestamp);
+
+
+                    //当时间戳大于已储存的时间戳，报警
+                    if (newMaxTimestamp > userReserve.alertTimestamp)
                     {
-                        await TriggerAlarm(alertsDatum);
+                        foreach (var alertsDatum in Untreated.Where(alertsDatum =>
+                                     alertsDatum.timestamp > userReserve.alertTimestamp))
+                        {
+                            await TriggerAlarm(alertsDatum);
+                        }
+
+                        // 更新已保存的最大时间戳
+                        userReserve.alertTimestamp = newMaxTimestamp;
                     }
-                    // 更新已保存的最大时间戳
-                    maxTimestamp = newMaxTimestamp;
                 }
+
+                var userreserve = JsonConvert.SerializeObject(userReserve);
+                Preferences.Set(nameof(App.UserReserve), userreserve);
+                App.UserReserve = userReserve;
+
             }
             catch (Exception ex)
             {
@@ -240,27 +250,16 @@ namespace Console.ViewModel
             }
         }
 
-        public static DateTime GetUnixDateTimeMilliseconds(long timestamp)
-        {
-            long begtime = timestamp * 10000;
-            DateTime dt_1970 = new DateTime(1970, 1, 1, 0, 0, 0);
-            long tricks_1970 = dt_1970.Ticks;//1970年1月1日刻度
-            long time_tricks = tricks_1970 + begtime;//日志日期刻度
-            DateTime dt = new DateTime(time_tricks);//转化为DateTime
-            return dt;
-        }
-
         //触发报警
-        private async Task TriggerAlarm(AlertsDatum alertsDatum)
+        private async Task TriggerAlarm(UntreatedAlertsData alertsDatum)
         {
             try
             {
                 var request = new NotificationRequest
                 {
                     NotificationId = 999,
-                    Title = "标题测试",
-                    Subtitle = "副标题测试",
-                    Description = "描述测试",
+                    Title = $"{alertsDatum.project} · {alertsDatum.leave}",
+                    Description = $"{alertsDatum.sensorName}\n {alertsDatum.time}",
                     BadgeNumber = 1, //小红点
 
                     Android = new AndroidOptions

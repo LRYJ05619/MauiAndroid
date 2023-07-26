@@ -16,6 +16,7 @@ namespace Console.Model
         public double value { get; set; }
         public string leave { get; set; }
         public string time { get; set; }
+        public long timestamp { get; set; }
     }
 
     public class TreatedAlertsData

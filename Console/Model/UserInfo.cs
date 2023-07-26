@@ -26,6 +26,9 @@ namespace Console.Model
         public string password { get; set; }
         public string ipaddr { get; set; }
         public string token { get; set; }
+        //token用时间戳
         public long timestamp { get; set; }
+        //报警用时间戳
+        public long alertTimestamp { get; set; }
     }
 }

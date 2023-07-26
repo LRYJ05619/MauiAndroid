@@ -68,12 +68,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.ProxyPa
 build_metadata.AdditionalFiles.TargetPath = View\Other\ProxyPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\Other\ProxyPage.xaml
 
-[D:/Desktop/MauiAndroid/Console/View/Other/Test.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.Test.xaml
-build_metadata.AdditionalFiles.TargetPath = View\Other\Test.xaml
-build_metadata.AdditionalFiles.RelativePath = View\Other\Test.xaml
-
 [D:/Desktop/MauiAndroid/Console/View/Startup/LoadingPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Startup.LoadingPage.xaml
