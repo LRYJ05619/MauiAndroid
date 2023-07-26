@@ -8,23 +8,121 @@
              Title="NotifyPage"
              x:DataType="mainViewModel:NotifyPageViewModel">
 
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <Style x:Key="Checked" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="Unchecked" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
     <RefreshView IsRefreshing="{Binding IsRefreshing}"
                  Command="{Binding BasicInfoGetCommand}"
                  RefreshColor="{StaticResource Primary}">
         <ScrollView>
             <Grid RowDefinitions="Auto,Auto,*" BackgroundColor="{StaticResource Secondary}">
+
+                <Grid.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Left" Threshold="20" Command="{Binding SetTreatedStatuCommand}"/>
+                    <SwipeGestureRecognizer Direction="Left" Threshold="20" Command="{Binding SetUntreatedStatuCommand}"/>
+                </Grid.GestureRecognizers>
+
                 <Grid BackgroundColor="White">
-                    <Label Text="报警管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,18"></Label>
+                    <Label Text="报警管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,8"/>
                 </Grid>
 
-                <CarouselView Grid.Row="2" ItemsSource="{Binding RequirdAlertDatas}">
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" BackgroundColor="White" IsVisible="{Binding UntreatedStatu}">
+                    <Button Text="未处理" Style="{StaticResource Checked}" Grid.Column="0" Command="{Binding SetTreatedStatuCommand}"/>
+                    <Button Text="已处理" Style="{StaticResource Unchecked}" Grid.Column="1" Command="{Binding SetUntreatedStatuCommand}"/>
+                </Grid>
+
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" BackgroundColor="White" IsVisible="{Binding TreatedStatu}">
+                    <Button Text="未处理" Style="{StaticResource Unchecked}" Grid.Column="0" Command="{Binding SetTreatedStatuCommand}"/>
+                    <Button Text="已处理" Style="{StaticResource Checked}" Grid.Column="1" Command="{Binding SetUntreatedStatuCommand}"/>
+                </Grid>
+
+                <CollectionView Grid.Row="2" ItemsSource="{Binding Untreated}" IsVisible="{Binding UntreatedStatu}">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:UntreatedAlertsData">
+                            <Grid Padding="0,8">
+
+                                <Frame BorderColor="Transparent"
+                                       BackgroundColor="White"
+                                       Margin="15,0,15,0">
+
+                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
+
+                                        <VerticalStackLayout Padding="10,0"
+                                                             VerticalOptions="Center">
+                                            <Label Text="{Binding project,StringFormat='所属项目：{0}'}"/>
+                                            <Label Text="{Binding sensorName,StringFormat='设备名称：{0}'}"/>
+                                            <Label Text="{Binding deviceType,StringFormat='设备类型：{0}'}"/>
+                                            <Label Text="{Binding property,StringFormat='报警数量：{0}'}"/>
+                                            <Label Text="{Binding leave,StringFormat='报警等级：{0}'}"/>
+                                            <Label Text="{Binding time,StringFormat='报警时间：{0}'}"/>
+                                        </VerticalStackLayout>
+
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <CollectionView Grid.Row="2" ItemsSource="{Binding Treated}" IsVisible="{Binding TreatedStatu}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:TreatedAlertsData">
+                            <Grid Padding="0,8">
+
+                                <Frame BorderColor="Transparent"
+                                       BackgroundColor="White"
+                                       Margin="15,0,15,0">
+
+                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
+
+                                        <VerticalStackLayout Padding="10,0"
+                                                             VerticalOptions="Center">
+
+                                            <Label Text="{Binding project,StringFormat='所属项目：{0}'}"/>
+                                            <Label Text="{Binding sensorName,StringFormat='设备名称：{0}'}"/>
+                                            <Label Text="{Binding deviceType,StringFormat='设备类型：{0}'}"/>
+                                            <Label Text="{Binding property,StringFormat='报警数量：{0}'}"/>
+                                            <Label Text="{Binding leave,StringFormat='报警等级：{0}'}"/>
+                                            <Label Text="{Binding time,StringFormat='报警时间：{0}'}"/>
+                                            <Label Text="{Binding handler,StringFormat='处理人：{0}'}"/>
+                                            <Label Text="{Binding info,StringFormat='处理信息：{0}'}"/>
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!--<CarouselView Grid.Row="2" ItemsSource="{Binding RequirdAlertDatas}">
                     <CarouselView.ItemTemplate>
                         <DataTemplate x:DataType="model:RequirdAlertData">
                             <StackLayout>
-                                <!-- First CollectionView -->
+                                --><!-- First CollectionView --><!--
                                 <CollectionView>
                                     <CollectionView.ItemTemplate>
-                                        <DataTemplate x:DataType="model:RequirdAlertData">
+                                        <DataTemplate>
                                             <Grid Padding="0,8">
 
                                                 <Frame BorderColor="Transparent"
@@ -49,10 +147,10 @@
                                         </DataTemplate>
                                     </CollectionView.ItemTemplate>
                                 </CollectionView>
-                                <!-- Second CollectionView -->
+                                --><!-- Second CollectionView --><!--
                                 <CollectionView>
                                     <CollectionView.ItemTemplate>
-                                        <DataTemplate x:DataType="model:RequirdAlertData">
+                                        <DataTemplate>
                                             <Grid Padding="0,8">
 
                                                 <Frame BorderColor="Transparent"
@@ -80,7 +178,7 @@
                             </StackLayout>
                         </DataTemplate>
                     </CarouselView.ItemTemplate>
-                </CarouselView>
+                </CarouselView>-->
             </Grid>
         </ScrollView>
     </RefreshView>

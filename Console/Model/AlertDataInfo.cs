@@ -7,24 +7,28 @@ using System.Threading.Tasks;
 
 namespace Console.Model
 {
-    public class RequirdAlertData
+    public class UntreatedAlertsData
     {
-        public string untreatedproject { get; set; }
-        public string untreatedsensorName { get; set; }
-        public string untreateddeviceType { get; set; }
-        public string untreatedproperty { get; set; }
-        public double untreatedvalue { get; set; }
-        public string untreatedleave { get; set; }
-        public string untreatedtime { get; set; }
+        public string project { get; set; }
+        public string sensorName { get; set; }
+        public string deviceType { get; set; }
+        public string property { get; set; }
+        public double value { get; set; }
+        public string leave { get; set; }
+        public string time { get; set; }
+    }
 
-        public string treatedproject { get; set; }
-        public string treatedsensorName { get; set; }
-        public string treateddeviceType { get; set; }
-        public string treatedproperty { get; set; }
-        public double treatedvalue { get; set; }
-        public string treatedleave { get; set; }
-        public string treatedtime { get; set; }
-        public AlertsDatumMetadata metadata { get; set; }
+    public class TreatedAlertsData
+    {
+        public string project { get; set; }
+        public string sensorName { get; set; }
+        public string deviceType { get; set; }
+        public string property { get; set; }
+        public double value { get; set; }
+        public string leave { get; set; }
+        public string time { get; set; }
+        public string handler { get; set; }
+        public string info { get; set; }
     }
 
     public class Notify

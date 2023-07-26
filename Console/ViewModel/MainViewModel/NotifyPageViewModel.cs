@@ -13,11 +13,9 @@ namespace Console.ViewModel.MainViewModel
 {
     public partial class NotifyPageViewModel : BaseViewModel
     {
-        [ObservableProperty]
-        private ObservableCollection<ContentPage> _tabPages;
-        [ObservableProperty]
-        private int _currentTabIndex;
-        public IAsyncRelayCommand RefreshCommand { get; }
+        [ObservableProperty] [NotifyPropertyChangedFor(nameof(TreatedStatu))]
+        private bool _untreatedStatu;
+        public bool TreatedStatu => !UntreatedStatu;
 
         public NotifyPageViewModel
         (
@@ -36,11 +34,24 @@ namespace Console.ViewModel.MainViewModel
                 proxyDevcieGetService
             )
         {
+            UntreatedStatu = true;
             //基础服务
             _ = BasicInfoGetAsync();
 
             //刷新时间
             StartTimer(60000);
+        }
+
+        [RelayCommand]
+        void SetUntreatedStatu()
+        {
+            UntreatedStatu = false;
+        }
+
+        [RelayCommand]
+        void SetTreatedStatu()
+        {
+            UntreatedStatu = true;
         }
     }
 }

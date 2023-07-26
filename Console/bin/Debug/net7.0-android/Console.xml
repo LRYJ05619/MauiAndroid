@@ -17,11 +17,14 @@
         <member name="P:Console.ViewModel.BaseViewModel.RequirdAkertsCount">
             <inheritdoc cref="F:Console.ViewModel.BaseViewModel._requirdAkertsCount"/>
         </member>
+        <member name="P:Console.ViewModel.BaseViewModel.Untreated">
+            <inheritdoc cref="F:Console.ViewModel.BaseViewModel._untreated"/>
+        </member>
+        <member name="P:Console.ViewModel.BaseViewModel.Treated">
+            <inheritdoc cref="F:Console.ViewModel.BaseViewModel._treated"/>
+        </member>
         <member name="P:Console.ViewModel.BaseViewModel.RequirdISD2180Info">
             <inheritdoc cref="F:Console.ViewModel.BaseViewModel._requirdISD2180Info"/>
-        </member>
-        <member name="P:Console.ViewModel.BaseViewModel.RequirdAlertDatas">
-            <inheritdoc cref="F:Console.ViewModel.BaseViewModel._requirdAlertDatas"/>
         </member>
         <member name="F:Console.ViewModel.BaseViewModel.basicInfoGetCommand">
             <summary>The backing field for <see cref="P:Console.ViewModel.BaseViewModel.BasicInfoGetCommand"/>.</summary>
@@ -46,12 +49,23 @@
         </member>
         <member name="T:Console.ViewModel.MainViewModel.NotifyPageViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
-        <member name="P:Console.ViewModel.MainViewModel.NotifyPageViewModel.TabPages">
-            <inheritdoc cref="F:Console.ViewModel.MainViewModel.NotifyPageViewModel._tabPages"/>
+        <member name="P:Console.ViewModel.MainViewModel.NotifyPageViewModel.UntreatedStatu">
+            <inheritdoc cref="F:Console.ViewModel.MainViewModel.NotifyPageViewModel._untreatedStatu"/>
         </member>
-        <member name="P:Console.ViewModel.MainViewModel.NotifyPageViewModel.CurrentTabIndex">
-            <inheritdoc cref="F:Console.ViewModel.MainViewModel.NotifyPageViewModel._currentTabIndex"/>
+        <member name="F:Console.ViewModel.MainViewModel.NotifyPageViewModel.setUntreatedStatuCommand">
+            <summary>The backing field for <see cref="P:Console.ViewModel.MainViewModel.NotifyPageViewModel.SetUntreatedStatuCommand"/>.</summary>
+        </member>
+        <member name="P:Console.ViewModel.MainViewModel.NotifyPageViewModel.SetUntreatedStatuCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Console.ViewModel.MainViewModel.NotifyPageViewModel.SetUntreatedStatu"/>.</summary>
+        </member>
+        <member name="F:Console.ViewModel.MainViewModel.NotifyPageViewModel.setTreatedStatuCommand">
+            <summary>The backing field for <see cref="P:Console.ViewModel.MainViewModel.NotifyPageViewModel.SetTreatedStatuCommand"/>.</summary>
+        </member>
+        <member name="P:Console.ViewModel.MainViewModel.NotifyPageViewModel.SetTreatedStatuCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Console.ViewModel.MainViewModel.NotifyPageViewModel.SetTreatedStatu"/>.</summary>
         </member>
         <member name="T:Console.ViewModel.MainViewModel.UserPageViewModel">
             <inheritdoc/>
@@ -215,20 +229,20 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RequirdAkertsCount">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RequirdAkertsCount" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Untreated">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Untreated" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Treated">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Treated" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RequirdISD2180Info">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RequirdISD2180Info" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RequirdAlertDatas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RequirdAlertDatas" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LegendPaint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LegendPaint" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TabPages">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TabPages" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentTabIndex">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentTabIndex" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UntreatedStatu">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UntreatedStatu" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SensorInfo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SensorInfo" generated properties.</summary>
@@ -257,20 +271,23 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RequirdAkertsCount">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RequirdAkertsCount" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Untreated">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Untreated" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Treated">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Treated" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RequirdISD2180Info">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RequirdISD2180Info" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RequirdAlertDatas">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RequirdAlertDatas" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LegendPaint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LegendPaint" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TabPages">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TabPages" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UntreatedStatu">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UntreatedStatu" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentTabIndex">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentTabIndex" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TreatedStatu">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TreatedStatu" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SensorInfo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SensorInfo" generated properties.</summary>
