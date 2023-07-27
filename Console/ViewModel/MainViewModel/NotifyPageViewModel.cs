@@ -23,7 +23,8 @@ namespace Console.ViewModel.MainViewModel
             AlertsDataGetService alertsDataGetReponsitory,
             DeviceGetService deviceGetService,
             ItemIdGetService itemIDGetReponsitory,
-            ProxyDeviceGetService proxyDevcieGetService
+            ProxyDeviceGetService proxyDevcieGetService,
+            DeviceStatuCountsGetService deviceStatuCountGetReponsitory
         )
             : base
             (
@@ -31,7 +32,8 @@ namespace Console.ViewModel.MainViewModel
                 alertsDataGetReponsitory,
                 deviceGetService,
                 itemIDGetReponsitory,
-                proxyDevcieGetService
+                proxyDevcieGetService,
+                deviceStatuCountGetReponsitory
             )
         {
             UntreatedStatu = true;
@@ -45,13 +47,13 @@ namespace Console.ViewModel.MainViewModel
         [RelayCommand]
         void SetUntreatedStatu()
         {
-            UntreatedStatu = false;
+            UntreatedStatu = true;
         }
 
         [RelayCommand]
         void SetTreatedStatu()
         {
-            UntreatedStatu = true;
+            UntreatedStatu = false;
         }
     }
 }

@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Console.Model
 {
+    public class DeviceStatuCount
+    {
+        public int online { get; set; }
+        public int offline { get; set; }
+        public double polling { get; set; }
+        public int alertCount { get; set; }
+    }
     public class RequirdISD2180Info
     {
         public string project { get; set; }
@@ -14,6 +21,7 @@ namespace Console.Model
         public string position { get; set; }
         public string createdTime { get; set; }
         public string underDevcie { get; set; }
+        public bool status { get; set; }
         public List<RequirdSensorInfo> sensors { get; set; }
     }
 
@@ -44,6 +52,7 @@ namespace Console.Model
         public bool init { get; set; }
         public List<Sensor> sensors { get; set; }
         public DeviceMetadata metadata { get; set; }
+        public bool status { get; set; }
     }
 
     public class Sensor

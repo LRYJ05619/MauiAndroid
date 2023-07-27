@@ -16,10 +16,25 @@ namespace Console.ViewModel.SatrtupViewModel
         private string _userName;
         [ObservableProperty]
         private string _password;
-        [ObservableProperty]
+        [ObservableProperty] 
         private string _ipAddr;
 
         private readonly ILoginReponsitory loginReponsitory = new LoginService();
+
+        public LoginPageViewModel()
+        {
+            string userDeatilsStr = Preferences.Get(nameof(App.UserReserve), "");
+
+            if (!string.IsNullOrWhiteSpace(userDeatilsStr))
+            {
+                var reserve = Preferences.Get(nameof(App.UserReserve), string.Empty);
+                var userReserve = JsonConvert.DeserializeObject<UserReserve>(reserve);
+
+                UserName = userReserve.email;
+                Password = userReserve.password;
+                IpAddr = userReserve.ipaddr;
+            }
+        }
 
         [RelayCommand]
         async Task LoginAsync()

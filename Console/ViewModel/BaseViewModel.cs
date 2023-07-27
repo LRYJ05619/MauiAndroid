@@ -23,9 +23,9 @@ namespace Console.ViewModel
         [ObservableProperty]
         private bool isRefreshing;
 
-        [ObservableProperty]
-        private bool isbusy;
-
+        //在线状态
+        [ObservableProperty] 
+        private DeviceStatuCount _deviceStatuCount = new DeviceStatuCount();
         //报警数量
         [ObservableProperty]
         private RequirdAkertsCount _requirdAkertsCount = new RequirdAkertsCount();
@@ -44,6 +44,8 @@ namespace Console.ViewModel
         private Timer timer;
         private bool isTimerRunning = false;
 
+        //设备状态
+        public ObservableValue DevicePollingValue { get; set; }
         //报警数量
         public ObservableValue Allleave1Value { get; set; }
         public ObservableValue Allleave2Value { get; set; }
@@ -53,26 +55,30 @@ namespace Console.ViewModel
         //服务实例化
         AlertsCountGetService alertsCountGetReponsitory;
         AlertsDataGetService alertsDataGetReponsitory;
-        DeviceGetService deviceGetService;
+        DeviceGetService deviceGetReponsitory;
         ItemIdGetService itemIDGetReponsitory;
         ProxyDeviceGetService proxyDevcieGetReponsitory;
+        DeviceStatuCountsGetService deviceStatuCountGetReponsitory;
 
         public BaseViewModel
         (
             AlertsCountGetService alertsCountGetReponsitory,
             AlertsDataGetService alertsDataGetReponsitory,
-            DeviceGetService deviceGetService,
+            DeviceGetService deviceGetReponsitory,
             ItemIdGetService itemIDGetReponsitory,
-            ProxyDeviceGetService proxyDevcieGetReponsitory
+            ProxyDeviceGetService proxyDevcieGetReponsitory,
+            DeviceStatuCountsGetService deviceStatuCountGetReponsitory
         )
         {
             this.alertsCountGetReponsitory = alertsCountGetReponsitory;
             this.alertsDataGetReponsitory = alertsDataGetReponsitory;
-            this.deviceGetService = deviceGetService;
+            this.deviceGetReponsitory = deviceGetReponsitory;
             this.itemIDGetReponsitory = itemIDGetReponsitory;
             this.proxyDevcieGetReponsitory = proxyDevcieGetReponsitory;
+            this.deviceStatuCountGetReponsitory = deviceStatuCountGetReponsitory;
 
             //实例化实现数据绑定
+            DevicePollingValue = new ObservableValue { Value = 0 };
             Allleave1Value = new ObservableValue { Value = 0 };
             Allleave2Value = new ObservableValue { Value = 0 };
             Allleave3Value = new ObservableValue { Value = 0 };
@@ -122,8 +128,15 @@ namespace Console.ViewModel
 
                 //项目ID获取
                 var projectsList = await itemIDGetReponsitory.ItemIDGet(userReserve);
+
+                //设备状态获取
+                DeviceStatuCount = await deviceStatuCountGetReponsitory.StatuCountGet(projectsList, userReserve);
+
+                DevicePollingValue.Value = DeviceStatuCount.polling;
+
                 //报警数量获取
                 RequirdAkertsCount = await alertsCountGetReponsitory.AlertsCountGet(projectsList, userReserve);
+
                 Allleave1Value.Value = RequirdAkertsCount.AllLeave1;
                 Allleave2Value.Value = RequirdAkertsCount.AllLeave2;
                 Allleave3Value.Value = RequirdAkertsCount.AllLeave3;
@@ -132,12 +145,15 @@ namespace Console.ViewModel
                 //设备类型获取 
                 var deviceTypeList = await proxyDevcieGetReponsitory.ProxyDevcieGet(userReserve);
                 //设备信息获取
-                var isd2180sList = await deviceGetService.AlertsDataGet(userReserve);
+                var isd2180sList = await deviceGetReponsitory.DeviceDataGet(userReserve);
                 //报警信息获取
                 var alertsDatumList = await alertsDataGetReponsitory.AlertsDataGet(userReserve);
 
                 //为报警信息分组
                 var groupedAlerts = alertsDatumList.GroupBy(alertsDatum => alertsDatum.metadata == null);
+
+                //报警设备数量
+                DeviceStatuCount.alertCount = alertsDatumList.GroupBy(data => data.sensor_id).Count();
 
                 Untreated = groupedAlerts.FirstOrDefault(g => g.Key == true)?
                     .Select(alertsDatum => new UntreatedAlertsData()
@@ -155,7 +171,7 @@ namespace Console.ViewModel
                         property = alertsDatum.property,
                         value = alertsDatum.value,
                         leave = JugeLeave(alertsDatum.level),
-                        time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
+                        time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).DateTime.ToString("yyyy-MM-dd HH:mm"),
                         timestamp = alertsDatum.time,
                     }).ToList();
 
@@ -175,7 +191,7 @@ namespace Console.ViewModel
                         property = alertsDatum.property,
                         value = alertsDatum.value,
                         leave = JugeLeave(alertsDatum.level),
-                        time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).ToString(),
+                        time = DateTimeOffset.FromUnixTimeSeconds(alertsDatum.time).DateTime.ToString("yyyy-MM-dd HH:mm"),
                         handler = alertsDatum.metadata.handler,
                         info = alertsDatum.metadata.info,
                     }).ToList();
@@ -187,6 +203,7 @@ namespace Console.ViewModel
                     name = isd2180s.name,
                     position = isd2180s.position,
                     createdTime = isd2180s.metadata.created_time,
+                    status = isd2180s.status,
                     sensors = isd2180s.sensors?.Select(sensor =>
                         new RequirdSensorInfo
                         {
@@ -237,10 +254,10 @@ namespace Console.ViewModel
 
         public string JugeLeave(string leave)
         {
-            if ("leave1" == leave)
+            if ("level1" == leave)
             {
                 return "轻度预警";
-            }else if ("leave2" == leave)
+            }else if ("level2" == leave)
             {
                 return "中度预警";
             }
@@ -257,9 +274,8 @@ namespace Console.ViewModel
             {
                 var request = new NotificationRequest
                 {
-                    NotificationId = 999,
                     Title = $"{alertsDatum.project} · {alertsDatum.leave}",
-                    Description = $"{alertsDatum.sensorName}\n {alertsDatum.time}",
+                    Description = $"{alertsDatum.sensorName}    {alertsDatum.time}",
                     BadgeNumber = 1, //小红点
 
                     Android = new AndroidOptions

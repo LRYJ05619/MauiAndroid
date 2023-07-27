@@ -19,14 +19,14 @@ namespace Console.Serivices.Server
             client = new HttpClient();
         }
 
-        public async Task<List<Isd2180s>> AlertsDataGet(UserReserve reserve)
+        public async Task<List<Isd2180s>> DeviceDataGet(UserReserve reserve)
         {
             try
             {
                 client.DefaultRequestHeaders.Remove("Authorization");
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {reserve.token}");
 
-                var url = "http://" + reserve.ipaddr + "/mappings/device/isd2180?limit=10&offset=0";
+                var url = "http://" + reserve.ipaddr + "/mappings/device/isd2180?limit=50&offset=0";
 
                 var response = await client.GetAsync(url);
 

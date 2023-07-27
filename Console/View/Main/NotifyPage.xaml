@@ -43,17 +43,32 @@
                 </Grid.GestureRecognizers>
 
                 <Grid BackgroundColor="White">
-                    <Label Text="报警管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,8"/>
+                    <Label Text="报警管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,4"/>
                 </Grid>
 
-                <Grid Grid.Row="1" ColumnDefinitions="*,*" BackgroundColor="White" IsVisible="{Binding UntreatedStatu}">
-                    <Button Text="未处理" Style="{StaticResource Checked}" Grid.Column="0" Command="{Binding SetTreatedStatuCommand}"/>
-                    <Button Text="已处理" Style="{StaticResource Unchecked}" Grid.Column="1" Command="{Binding SetUntreatedStatuCommand}"/>
-                </Grid>
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" BackgroundColor="White">
 
-                <Grid Grid.Row="1" ColumnDefinitions="*,*" BackgroundColor="White" IsVisible="{Binding TreatedStatu}">
-                    <Button Text="未处理" Style="{StaticResource Unchecked}" Grid.Column="0" Command="{Binding SetTreatedStatuCommand}"/>
-                    <Button Text="已处理" Style="{StaticResource Checked}" Grid.Column="1" Command="{Binding SetUntreatedStatuCommand}"/>
+                    <Button Text="未处理" Grid.Column="0" Command="{Binding SetUntreatedStatuCommand}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding UntreatedStatu}" Value="true">
+                                <Setter Property="Style" Value="{StaticResource Checked}"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Button" Binding="{Binding UntreatedStatu}" Value="false">
+                                <Setter Property="Style" Value="{StaticResource Unchecked}"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+
+                    <Button Text="已处理" Grid.Column="1" Command="{Binding SetTreatedStatuCommand}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding UntreatedStatu}" Value="true">
+                                <Setter Property="Style" Value="{StaticResource Unchecked}"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Button" Binding="{Binding UntreatedStatu}" Value="false">
+                                <Setter Property="Style" Value="{StaticResource Checked}"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Grid>
 
                 <CollectionView Grid.Row="2" ItemsSource="{Binding Untreated}" IsVisible="{Binding UntreatedStatu}">
@@ -66,16 +81,47 @@
                                        BackgroundColor="White"
                                        Margin="15,0,15,0">
 
-                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
+                                    <Grid Padding="0" ColumnDefinitions="Auto,Auto">
 
-                                        <VerticalStackLayout Padding="10,0"
+                                        <VerticalStackLayout Padding="10,0,0,0"
                                                              VerticalOptions="Center">
-                                            <Label Text="{Binding project,StringFormat='所属项目：{0}'}"/>
-                                            <Label Text="{Binding sensorName,StringFormat='设备名称：{0}'}"/>
-                                            <Label Text="{Binding deviceType,StringFormat='设备类型：{0}'}"/>
-                                            <Label Text="{Binding property,StringFormat='报警数量：{0}'}"/>
-                                            <Label Text="{Binding leave,StringFormat='报警等级：{0}'}"/>
-                                            <Label Text="{Binding time,StringFormat='报警时间：{0}'}"/>
+                                            <Label Text="所属项目："/>
+                                            <Label Text="设备名称："/>
+                                            <Label Text="设备类型："/>
+                                            <Label Text="报警数量："/>
+                                            <Label Text="报警数量："/>
+                                            <Label Text="报警等级：" Padding="0,4"/>
+                                            <Label Text="报警时间："/>
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout Grid.Column="1" 
+                                                             Padding="0,0,0,0"
+                                                             VerticalOptions="Center">
+                                            <Label Text="{Binding project}"    />
+                                            <Label Text="{Binding sensorName}" />
+                                            <Label Text="{Binding deviceType}" />
+                                            <Label Text="{Binding property}"   />
+                                            <Label Text="{Binding value}"      />
+<Grid>
+                                            <Label Text="{Binding leave}" TextColor="White" Padding="0,4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                <Label.Triggers>
+
+                                                    <DataTrigger TargetType="Label" Binding="{Binding leave}" Value="轻度预警">
+                                                        <Setter Property="BackgroundColor" Value="GreenYellow" />
+                                                    </DataTrigger>
+
+                                                    <DataTrigger TargetType="Label" Binding="{Binding leave}" Value="中度预警">
+                                                        <Setter Property="BackgroundColor" Value="Orange" />
+                                                    </DataTrigger>
+
+                                                    <DataTrigger TargetType="Label" Binding="{Binding leave}" Value="重度预警">
+                                                        <Setter Property="BackgroundColor" Value="Red" />
+                                                    </DataTrigger>
+
+                                                </Label.Triggers>
+                                            </Label>
+</Grid>
+                                            <Label Text="{Binding time}"  TextColor="Red"/>
                                         </VerticalStackLayout>
 
                                     </Grid>
@@ -94,19 +140,34 @@
                                        BackgroundColor="White"
                                        Margin="15,0,15,0">
 
-                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
+                                    <Grid Padding="0" ColumnDefinitions="Auto,Auto">
 
-                                        <VerticalStackLayout Padding="10,0"
+                                        <VerticalStackLayout Padding="10,0,0,0"
+                                                             VerticalOptions="Center">
+                                            <Label Text="所属项目："/>
+                                            <Label Text="设备名称："/>
+                                            <Label Text="设备类型："/>
+                                            <Label Text="报警数量："/>
+                                            <Label Text="报警数量："/>
+                                            <Label Text="报警等级："/>
+                                            <Label Text="报警时间："/>
+                                            <Label Text="处理人："/>
+                                            <Label Text="处理信息："/>
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout Grid.Column="1" 
+                                                             Padding="0,0,0,0"
                                                              VerticalOptions="Center">
 
-                                            <Label Text="{Binding project,StringFormat='所属项目：{0}'}"/>
-                                            <Label Text="{Binding sensorName,StringFormat='设备名称：{0}'}"/>
-                                            <Label Text="{Binding deviceType,StringFormat='设备类型：{0}'}"/>
-                                            <Label Text="{Binding property,StringFormat='报警数量：{0}'}"/>
-                                            <Label Text="{Binding leave,StringFormat='报警等级：{0}'}"/>
-                                            <Label Text="{Binding time,StringFormat='报警时间：{0}'}"/>
-                                            <Label Text="{Binding handler,StringFormat='处理人：{0}'}"/>
-                                            <Label Text="{Binding info,StringFormat='处理信息：{0}'}"/>
+                                            <Label Text="{Binding project}"    />
+                                            <Label Text="{Binding sensorName}" />
+                                            <Label Text="{Binding deviceType}" />
+                                            <Label Text="{Binding property}"   />
+                                            <Label Text="{Binding value}"      />
+                                            <Label Text="{Binding leave}"      />
+                                            <Label Text="{Binding time}"       />
+                                            <Label Text="{Binding handler}"    TextColor="{StaticResource Primary}"/>
+                                            <Label Text="{Binding info}"       TextColor="{StaticResource Primary}"/>
                                         </VerticalStackLayout>
                                     </Grid>
                                 </Frame>
@@ -115,70 +176,6 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
-                <!--<CarouselView Grid.Row="2" ItemsSource="{Binding RequirdAlertDatas}">
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate x:DataType="model:RequirdAlertData">
-                            <StackLayout>
-                                --><!-- First CollectionView --><!--
-                                <CollectionView>
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid Padding="0,8">
-
-                                                <Frame BorderColor="Transparent"
-                                                       BackgroundColor="White"
-                                                       Margin="15,0,15,0">
-
-                                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
-
-                                                        <VerticalStackLayout Padding="10,0"
-                                                             VerticalOptions="Center">
-                                                            <Label Text="{Binding untreatedproject,StringFormat='所属项目：{0}'}"/>
-                                                            <Label Text="{Binding untreatedsensorName,StringFormat='设备名称：{0}'}"/>
-                                                            <Label Text="{Binding untreateddeviceType,StringFormat='设备类型：{0}'}"/>
-                                                            <Label Text="{Binding untreatedproperty,StringFormat='报警数量：{0}'}"/>
-                                                            <Label Text="{Binding untreatedleave,StringFormat='报警等级：{0}'}"/>
-                                                            <Label Text="{Binding untreatedtime,StringFormat='报警时间：{0}'}"/>
-                                                        </VerticalStackLayout>
-
-                                                    </Grid>
-                                                </Frame>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                                --><!-- Second CollectionView --><!--
-                                <CollectionView>
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid Padding="0,8">
-
-                                                <Frame BorderColor="Transparent"
-                                                       BackgroundColor="White"
-                                                         Margin="15,0,15,0">
-
-                                                    <Grid Padding="0" RowDefinitions="Auto,Auto">
-
-                                                        <VerticalStackLayout Padding="10,0"
-                                                             VerticalOptions="Center">
-
-                                                            <Label Text="{Binding treatedproject,StringFormat='所属项目：{0}'}"/>
-                                                            <Label Text="{Binding treatedsensorName,StringFormat='设备名称：{0}'}"/>
-                                                            <Label Text="{Binding treateddeviceType,StringFormat='设备类型：{0}'}"/>
-                                                            <Label Text="{Binding treatedproperty,StringFormat='报警数量：{0}'}"/>
-                                                            <Label Text="{Binding treatedleave,StringFormat='报警等级：{0}'}"/>
-                                                            <Label Text="{Binding treatedtime,StringFormat='报警时间：{0}'}"/>
-                                                        </VerticalStackLayout>
-                                                    </Grid>
-                                                </Frame>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>-->
             </Grid>
         </ScrollView>
     </RefreshView>

@@ -22,6 +22,7 @@ namespace Console.ViewModel.SatrtupViewModel
         {
             string userDeatilsStr = Preferences.Get(nameof(App.UserReserve), "");
 
+            //没有保存的用户信息
             if (string.IsNullOrWhiteSpace(userDeatilsStr))
             {
                 await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
@@ -33,8 +34,10 @@ namespace Console.ViewModel.SatrtupViewModel
 
                 var currentTimestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds(); // 当前时间戳
 
+                //token过期
                 if (currentTimestamp >= userReserve.timestamp)
                 {
+
                     await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
                 }
                 else

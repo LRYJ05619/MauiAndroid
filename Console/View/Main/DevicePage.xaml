@@ -35,15 +35,41 @@
                                         Path=GoToProxyCommand}"/>
                                 </Frame.GestureRecognizers>
 
-                                <Grid Padding="0">
+                                <Grid Padding="0" ColumnDefinitions="Auto,*">
 
-                                    <VerticalStackLayout Padding="10,0"
+                                    <VerticalStackLayout Padding="10,0,0,0"
                                                          VerticalOptions="Center">
-                                        <Label Text="{Binding project,StringFormat='所属项目：{0}'}"/>
-                                        <Label Text="{Binding id,StringFormat='设备I D：{0}'}"/>
-                                        <Label Text="{Binding name,StringFormat='设备名称：{0}'}"/>
-                                        <Label Text="{Binding position,StringFormat='地理位置：{0}'}"/>
-                                        <Label Text="{Binding createdTime,StringFormat='创建时间：{0}'}"/>
+                                        <Label Text="所属项目："/>
+                                        <Label Text="设备 I D："/>
+                                        <Label Text="设备名称："/>
+                                        <Label Text="设备状态："/>
+                                        <Label Text="地理位置："/>
+                                        <Label Text="创建时间："/>
+                                    </VerticalStackLayout>
+
+                                    <VerticalStackLayout Grid.Column="1" 
+                                                         Padding="0,0,0,0"
+                                                         VerticalOptions="Center">
+                                        <Label Text="{Binding project}"/>
+                                        <Label Text="{Binding id}"/>
+                                        <Label Text="{Binding name}"/>
+
+
+                                        <Label>
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding status}" Value="true">
+                                                    <Setter Property="Text" Value="在线"/>
+                                                    <Setter Property="TextColor" Value="LimeGreen" />
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Label" Binding="{Binding status}" Value="false">
+                                                    <Setter Property="Text" Value="离线" />
+                                                    <Setter Property="TextColor" Value="{StaticResource Gray300}" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+
+                                        <Label Text="{Binding position}"/>
+                                        <Label Text="{Binding createdTime}"/>
                                     </VerticalStackLayout>
                                 </Grid>
                             </Frame>

@@ -9,7 +9,7 @@
     <Grid RowDefinitions="Auto,*" BackgroundColor="{StaticResource Secondary}">
 
         <Grid BackgroundColor="White" Grid.Row="0" >
-            <Label Text="设备管理" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,8"/>
+            <Label Text="设备列表" TextColor="Black" FontSize="18" HorizontalOptions="CenterAndExpand" Margin="0,15,0,8"/>
             <Polyline Points="33,10 25,18 33,26"
                       Stroke="black"
                       StrokeThickness="2">

@@ -22,11 +22,27 @@
 
                     <Frame Grid.Row="1" Grid.ColumnSpan="2" BorderColor="Transparent" BackgroundColor="White" Margin="15,0,15,0">
                         <Grid Padding="0" ColumnDefinitions="2*,*,3*">
+
                             <VerticalStackLayout >
                                 <Label Text="在线设备" FontSize="16" Margin="8,0,0,0"/>
                                 <Label Text="离线设备" FontSize="16" Margin="8,25,0,0"/>
-                                <Label Text="报警设备" FontSize="16" Margin="8,25,0,0"/>
+                                <Label Text="报警传感器" FontSize="16" Margin="8,25,0,0"/>
                             </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="{Binding DeviceStatuCount.online}" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="{Binding DeviceStatuCount.offline}" FontSize="16" Margin="8,25,0,0"/>
+                                <Label Text="{Binding DeviceStatuCount.alertCount}" FontSize="16" Margin="8,25,0,0"/>
+                            </VerticalStackLayout>
+
+                            <lvc:PieChart HeightRequest="125"
+                                          Grid.Column="2"
+                                          Series="{Binding StatusSeries}"
+                                          MaxAngle="360"
+                                          InitialRotation="-225"
+                                          TooltipPosition="Hidden"
+                                          Total="100">
+                            </lvc:PieChart>
 
                         </Grid>
                     </Frame>
@@ -36,13 +52,13 @@
                     <Frame Grid.Row="3" Grid.ColumnSpan="2" BorderColor="Transparent" BackgroundColor="White" Margin="15,0,15,0">
                         <Grid Padding="0" ColumnDefinitions="2*,*,3*">
                             <VerticalStackLayout >
-                                <Label Text="报警设备数" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="设备报警数" FontSize="16" Margin="8,0,0,0"/>
                                 <Label Text="已处理报警" FontSize="16" Margin="8,25,0,0"/>
                                 <Label Text="未处理报警" FontSize="16" Margin="8,25,0,0"/>
                             </VerticalStackLayout>
 
                             <VerticalStackLayout Grid.Column="1">
-                                <Label Text="1" FontSize="16" Margin="8,0,0,0"/>
+                                <Label Text="{Binding RequirdAkertsCount.All}" FontSize="16" Margin="8,0,0,0"/>
                                 <Label Text="{Binding RequirdAkertsCount.AllInactive}" FontSize="16" Margin="8,25,0,0"/>
                                 <Label Text="{Binding RequirdAkertsCount.AllActive}" FontSize="16" Margin="8,25,0,0"/>
                             </VerticalStackLayout>
@@ -52,6 +68,7 @@
                                 Series="{Binding SolveSeries}"
                                 MaxAngle="360"
                                 InitialRotation="-225"
+                                TooltipPosition="Hidden"
                                 Total="100">
                             </lvc:PieChart>
 
@@ -78,6 +95,7 @@
                                           InitialRotation="-225"
                                           LegendPosition="Right"
                                           LegendTextPaint="{Binding LegendPaint}"
+                                          TooltipPosition="Hidden"
                                           LegendTextSize="30">
                             </lvc:PieChart>
 

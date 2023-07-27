@@ -13,7 +13,8 @@ namespace Console.ViewModel.MainViewModel
             AlertsDataGetService alertsDataGetReponsitory,
             DeviceGetService deviceGetService,
             ItemIdGetService itemIDGetReponsitory,
-            ProxyDeviceGetService proxyDevcieGetService
+            ProxyDeviceGetService proxyDevcieGetService,
+            DeviceStatuCountsGetService deviceStatuCountGetReponsitory
         )
             : base
             (
@@ -21,7 +22,8 @@ namespace Console.ViewModel.MainViewModel
                 alertsDataGetReponsitory,
                 deviceGetService,
                 itemIDGetReponsitory,
-                proxyDevcieGetService
+                proxyDevcieGetService,
+                deviceStatuCountGetReponsitory
             )
         {
             //基础服务

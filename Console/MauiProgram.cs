@@ -10,6 +10,9 @@ using Console.View.Main;
 using Console.View.Other;
 using Console.ViewModel.MainViewModel;
 using Console.ViewModel.OtherViewModel;
+using Plugin.LocalNotification.AndroidOption;
+using Plugin.LocalNotification;
+using Microsoft.Maui.LifecycleEvents;
 
 namespace Console;
 
@@ -35,6 +38,31 @@ public static class MauiProgram
 #if ANDROID
                 handlers.AddHandler(typeof(Entry), typeof(Console.Platforms.Android.MyEntryHandler));
 #endif
+            })
+            .ConfigureLifecycleEvents(events =>
+            {
+                events.AddAndroid(android => android
+                    .OnCreate((activity, bundle) => ResidentNotification())
+                    .OnStop((activity) => ResidentNotification()));
+
+                static void ResidentNotification()
+                {
+                    var resident = new NotificationRequest
+                    {
+                        NotificationId = 1000,
+                        Title = "结构健康监测平台",
+                        Subtitle = "后台保持通知",
+                        Silent = true,
+
+                        Android = new AndroidOptions
+                        {
+                            VisibilityType = AndroidVisibilityType.Private,//or Public
+                            Ongoing = true,
+                            AutoCancel = false
+                        }
+                    };
+                    LocalNotificationCenter.Current.Show(resident);
+                }
             });
 
         //Views
@@ -61,6 +89,7 @@ public static class MauiProgram
         builder.Services.AddTransient<DeviceGetService>();
         builder.Services.AddTransient<ItemIdGetService>();
         builder.Services.AddTransient<ProxyDeviceGetService>();
+        builder.Services.AddTransient<DeviceStatuCountsGetService>();
 
 
 #if DEBUG

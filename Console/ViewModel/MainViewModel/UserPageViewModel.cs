@@ -11,10 +11,10 @@ namespace Console.ViewModel.MainViewModel
         [RelayCommand]
         async Task SignOutAsync()
         {
-            if (Preferences.ContainsKey(nameof(App.UserReserve)))
-            {
-                Preferences.Remove(nameof(App.UserReserve));
-            }
+            //if (Preferences.ContainsKey(nameof(App.UserReserve)))
+            //{
+            //    Preferences.Remove(nameof(App.UserReserve));
+            //}
             await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
         }
 

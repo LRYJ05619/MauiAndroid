@@ -6,7 +6,6 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Console.Model;
-using Console.Serivices.Interface;
 
 namespace Console.Serivices.Server
 {
@@ -52,6 +51,7 @@ namespace Console.Serivices.Server
 
                 requirdAkerts.Polling = (double)requirdAkerts.AllInactive / (requirdAkerts.AllInactive + requirdAkerts.AllActive) * 100;
                 requirdAkerts.Polling = Math.Round(requirdAkerts.Polling, 2);
+                requirdAkerts.All = requirdAkerts.AllActive + requirdAkerts.AllInactive;
                 return requirdAkerts;
             }
             catch (Exception ex)

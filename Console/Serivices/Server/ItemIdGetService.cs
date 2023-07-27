@@ -22,7 +22,7 @@ namespace Console.Serivices.Server
                 client.DefaultRequestHeaders.Remove("Authorization");
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {reserve.token}");
 
-                var url = "http://" + reserve.ipaddr + "/projects?limit=40&offset=0";
+                var url = "http://" + reserve.ipaddr + "/projects?limit=50&offset=0";
 
                 var response = await client.GetAsync(url);
 

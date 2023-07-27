@@ -11,8 +11,8 @@
         <member name="P:Console.ViewModel.BaseViewModel.IsRefreshing">
             <inheritdoc cref="F:Console.ViewModel.BaseViewModel.isRefreshing"/>
         </member>
-        <member name="P:Console.ViewModel.BaseViewModel.Isbusy">
-            <inheritdoc cref="F:Console.ViewModel.BaseViewModel.isbusy"/>
+        <member name="P:Console.ViewModel.BaseViewModel.DeviceStatuCount">
+            <inheritdoc cref="F:Console.ViewModel.BaseViewModel._deviceStatuCount"/>
         </member>
         <member name="P:Console.ViewModel.BaseViewModel.RequirdAkertsCount">
             <inheritdoc cref="F:Console.ViewModel.BaseViewModel._requirdAkertsCount"/>
@@ -223,8 +223,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Isbusy">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Isbusy" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DeviceStatuCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DeviceStatuCount" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RequirdAkertsCount">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RequirdAkertsCount" generated properties.</summary>
@@ -265,8 +265,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Isbusy">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Isbusy" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DeviceStatuCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DeviceStatuCount" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RequirdAkertsCount">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RequirdAkertsCount" generated properties.</summary>

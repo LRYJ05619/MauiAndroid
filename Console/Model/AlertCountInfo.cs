@@ -17,6 +17,7 @@ namespace Console.Model
         public int AllInactive { get; set; }
         public int AllActive { get; set; }
         public double Polling { get; set; }
+        public int All { get; set; }
     }
 
     //返回响应

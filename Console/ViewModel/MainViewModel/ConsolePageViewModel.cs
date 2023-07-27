@@ -25,6 +25,7 @@ namespace Console.ViewModel.MainViewModel
         private IPaint<LiveChartsCore.SkiaSharpView.Drawing.SkiaSharpDrawingContext> _legendPaint;
 
         //饼图绘制
+        public IEnumerable<ISeries> StatusSeries { get; set; }
         public IEnumerable<ISeries> SolveSeries { get; set; }
         public ISeries[] WarningSeries { get; set; }
 
@@ -35,7 +36,8 @@ namespace Console.ViewModel.MainViewModel
             AlertsDataGetService alertsDataGetReponsitory,
             DeviceGetService deviceGetService,
             ItemIdGetService itemIDGetReponsitory,
-            ProxyDeviceGetService proxyDevcieGetService
+            ProxyDeviceGetService proxyDevcieGetService,
+            DeviceStatuCountsGetService deviceStatuCountGetReponsitory
         )
             : base
             (
@@ -43,7 +45,8 @@ namespace Console.ViewModel.MainViewModel
                 alertsDataGetReponsitory,
                 deviceGetService,
                 itemIDGetReponsitory,
-                proxyDevcieGetService
+                proxyDevcieGetService,
+                deviceStatuCountGetReponsitory
             )
         {
             //基础服务
@@ -63,13 +66,32 @@ namespace Console.ViewModel.MainViewModel
                 SKTypeface = SKFontManager.Default.MatchCharacter('汉')
             };
 
+            var statusPaint = new SolidColorPaint()
+            {
+                Color = SKColors.LimeGreen,
+                SKTypeface = SKFontManager.Default.MatchCharacter('汉')
+            };
+
+            StatusSeries = new GaugeBuilder()
+                .WithLabelsSize(35)
+                .WithLabelsPosition(PolarLabelsPosition.ChartCenter)
+                .WithLabelFormatter(point => $"在线比率\n   {DevicePollingValue.Value}%")
+
+                .WithInnerRadius(8)
+                .WithMaxColumnWidth(25)
+                .WithBackground(null)
+
+                .AddValue(DevicePollingValue, "在线比率", statusPaint, statusPaint)
+
+                .BuildSeries();
+
             SolveSeries = new GaugeBuilder()
                 .WithLabelsSize(35)
                 .WithLabelsPosition(PolarLabelsPosition.ChartCenter)
                 .WithLabelFormatter(point => $"巡检比率\n {PollingValue.Value}%")
 
-                .WithInnerRadius(20)
-                .WithMaxColumnWidth(15)
+                .WithInnerRadius(17)
+                .WithMaxColumnWidth(25)
                 .WithBackground(null)
 
                 .AddValue(PollingValue, "巡检比率", solvePaint, solvePaint)
@@ -89,7 +111,8 @@ namespace Console.ViewModel.MainViewModel
 
                 new PieSeries<ObservableValue>
                 {
-                    Values = new ObservableCollection<ObservableValue> { Allleave2Value }, InnerRadius = 128,
+                    Values = new ObservableCollection<ObservableValue> { Allleave2Value }, 
+                    InnerRadius = 128,
                     Name = "中度预警",
                     Fill = new SolidColorPaint(SKColors.Orange),
                 },
