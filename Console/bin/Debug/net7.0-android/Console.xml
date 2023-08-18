@@ -83,6 +83,19 @@
         <member name="P:Console.ViewModel.MainViewModel.UserPageViewModel.GoToSetCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Console.ViewModel.MainViewModel.UserPageViewModel.GoToSet"/>.</summary>
         </member>
+        <member name="T:Console.ViewModel.OtherViewModel.ErrPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Console.ViewModel.OtherViewModel.ErrPageViewModel.StatusCode">
+            <inheritdoc cref="F:Console.ViewModel.OtherViewModel.ErrPageViewModel.statusCode"/>
+        </member>
+        <member name="F:Console.ViewModel.OtherViewModel.ErrPageViewModel.signOutCommand">
+            <summary>The backing field for <see cref="P:Console.ViewModel.OtherViewModel.ErrPageViewModel.SignOutCommand"/>.</summary>
+        </member>
+        <member name="P:Console.ViewModel.OtherViewModel.ErrPageViewModel.SignOutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Console.ViewModel.OtherViewModel.ErrPageViewModel.SignOutAsync"/>.</summary>
+        </member>
         <member name="T:Console.ViewModel.OtherViewModel.ProxyPageViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -244,6 +257,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UntreatedStatu">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UntreatedStatu" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StatusCode">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StatusCode" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SensorInfo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SensorInfo" generated properties.</summary>
         </member>
@@ -288,6 +304,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TreatedStatu">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TreatedStatu" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StatusCode">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StatusCode" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SensorInfo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SensorInfo" generated properties.</summary>

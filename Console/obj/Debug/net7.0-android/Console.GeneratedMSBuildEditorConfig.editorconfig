@@ -62,17 +62,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Main.UserPage
 build_metadata.AdditionalFiles.TargetPath = View\Main\UserPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\Main\UserPage.xaml
 
+[D:/Desktop/MauiAndroid/Console/View/Other/ErrPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.ErrPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Other\ErrPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Other\ErrPage.xaml
+
+[D:/Desktop/MauiAndroid/Console/View/Other/LoadingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.LoadingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Other\LoadingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Other\LoadingPage.xaml
+
 [D:/Desktop/MauiAndroid/Console/View/Other/ProxyPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.ProxyPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\Other\ProxyPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\Other\ProxyPage.xaml
-
-[D:/Desktop/MauiAndroid/Console/View/Startup/LoadingPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Startup.LoadingPage.xaml
-build_metadata.AdditionalFiles.TargetPath = View\Startup\LoadingPage.xaml
-build_metadata.AdditionalFiles.RelativePath = View\Startup\LoadingPage.xaml
 
 [D:/Desktop/MauiAndroid/Console/View/Startup/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

@@ -43,4 +43,11 @@
         ContentTemplate="{DataTemplate other:ProxyPage}"
         Route="ProxyPage" />
 
+    <ShellContent
+        Title="ErrPage"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate other:ErrPage}"
+        Route="ErrPage" />
+
 </Shell>

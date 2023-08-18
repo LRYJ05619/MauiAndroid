@@ -73,6 +73,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<LoadingPage>();
         builder.Services.AddSingleton<UserPage>();
         builder.Services.AddSingleton<ProxyPage>();
+        builder.Services.AddSingleton<ErrPage>();
 
         //View Models
         builder.Services.AddSingleton<LoginPageViewModel>();
@@ -82,6 +83,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<NotifyPageViewModel>();
         builder.Services.AddSingleton<DevicePageViewModel>();
         builder.Services.AddSingleton<ProxyPageViewModel>();
+        builder.Services.AddSingleton<ErrPageViewModel>();
 
         //Serivice
         builder.Services.AddTransient<AlertsCountGetService>();

@@ -46,9 +46,7 @@ namespace Console.ViewModel.SatrtupViewModel
                 var UserReserve = await loginReponsitory.Login(UserName, Password, IpAddr);
 
                 if (UserReserve == null)
-                {
                     return;
-                }
 
                 if (Preferences.ContainsKey(nameof(App.UserReserve)))
                 {
@@ -56,7 +54,6 @@ namespace Console.ViewModel.SatrtupViewModel
                 }
 
                 var userReserve = JsonConvert.SerializeObject(UserReserve);
-
                 Preferences.Set(nameof(App.UserReserve), userReserve);
                 App.UserReserve = UserReserve;
 

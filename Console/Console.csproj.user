@@ -8,4 +8,9 @@
     <SelectedDevice>Android Emulator</SelectedDevice>
     <DefaultDevice>phone_m-dpi_5_4in_-_api_33</DefaultDevice>
   </PropertyGroup>
+  <ItemGroup>
+    <MauiXaml Update="View\Other\ErrPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+  </ItemGroup>
 </Project>

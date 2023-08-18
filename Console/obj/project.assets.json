@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     "net7.0-android33.0": {
-      "CommunityToolkit.Maui/5.2.0": {
+      "CommunityToolkit.Maui/5.3.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "5.2.0"
+          "CommunityToolkit.Maui.Core": "5.3.0"
         },
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.dll": {
@@ -18,7 +18,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/5.2.0": {
+      "CommunityToolkit.Maui.Core/5.3.0": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.Core.dll": {
@@ -60,10 +60,10 @@
           }
         }
       },
-      "HarfBuzzSharp/2.8.2.3": {
+      "HarfBuzzSharp/2.8.2.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.3"
+          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/HarfBuzzSharp.dll": {
@@ -76,7 +76,7 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.Android/2.8.2.3": {
+      "HarfBuzzSharp.NativeAssets.Android/2.8.2.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -106,7 +106,7 @@
           }
         }
       },
-      "LiveChartsCore/2.0.0-beta.810": {
+      "LiveChartsCore/2.0.0-beta.911": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.dll": {
@@ -119,12 +119,12 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.HarfBuzz": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.HarfBuzz": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.dll": {
@@ -137,21 +137,21 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.810",
-          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.911",
+          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.4-preview.84"
         },
         "compile": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -339,7 +339,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Maui.Graphics/7.0.86": {
+      "Microsoft.Maui.Graphics/7.0.92": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
@@ -381,10 +381,10 @@
           }
         }
       },
-      "SkiaSharp/2.88.3": {
+      "SkiaSharp/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.NativeAssets.Android": "2.88.3"
+          "SkiaSharp.NativeAssets.Android": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.dll": {
@@ -397,11 +397,11 @@
           }
         }
       },
-      "SkiaSharp.HarfBuzz/2.88.3": {
+      "SkiaSharp.HarfBuzz/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp": "2.8.2.3",
-          "SkiaSharp": "2.88.3"
+          "HarfBuzzSharp": "2.8.2.4-preview.84",
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
@@ -414,7 +414,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Android/2.88.3": {
+      "SkiaSharp.NativeAssets.Android/2.88.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -444,26 +444,26 @@
           }
         }
       },
-      "SkiaSharp.Views/2.88.3": {
+      "SkiaSharp.Views/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         },
         "runtime": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Core": "2.88.3"
+          "SkiaSharp.Views.Maui.Core": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
@@ -476,10 +476,10 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Controls": "2.88.3"
+          "SkiaSharp.Views.Maui.Controls": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.Compatibility.dll": {
@@ -492,11 +492,11 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Core/2.88.3": {
+      "SkiaSharp.Views.Maui.Core/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.Views": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.Views": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
@@ -2334,10 +2334,10 @@
       }
     },
     "net7.0-android33.0/android-arm": {
-      "CommunityToolkit.Maui/5.2.0": {
+      "CommunityToolkit.Maui/5.3.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "5.2.0"
+          "CommunityToolkit.Maui.Core": "5.3.0"
         },
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.dll": {
@@ -2350,7 +2350,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/5.2.0": {
+      "CommunityToolkit.Maui.Core/5.3.0": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.Core.dll": {
@@ -2392,10 +2392,10 @@
           }
         }
       },
-      "HarfBuzzSharp/2.8.2.3": {
+      "HarfBuzzSharp/2.8.2.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.3"
+          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/HarfBuzzSharp.dll": {
@@ -2408,7 +2408,7 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.Android/2.8.2.3": {
+      "HarfBuzzSharp.NativeAssets.Android/2.8.2.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -2423,7 +2423,7 @@
           "buildTransitive/net6.0-android30.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
-      "LiveChartsCore/2.0.0-beta.810": {
+      "LiveChartsCore/2.0.0-beta.911": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.dll": {
@@ -2436,12 +2436,12 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.HarfBuzz": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.HarfBuzz": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.dll": {
@@ -2454,21 +2454,21 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.810",
-          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.911",
+          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.4-preview.84"
         },
         "compile": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -2656,7 +2656,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Maui.Graphics/7.0.86": {
+      "Microsoft.Maui.Graphics/7.0.92": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
@@ -2698,10 +2698,10 @@
           }
         }
       },
-      "SkiaSharp/2.88.3": {
+      "SkiaSharp/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.NativeAssets.Android": "2.88.3"
+          "SkiaSharp.NativeAssets.Android": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.dll": {
@@ -2714,11 +2714,11 @@
           }
         }
       },
-      "SkiaSharp.HarfBuzz/2.88.3": {
+      "SkiaSharp.HarfBuzz/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp": "2.8.2.3",
-          "SkiaSharp": "2.88.3"
+          "HarfBuzzSharp": "2.8.2.4-preview.84",
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
@@ -2731,7 +2731,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Android/2.88.3": {
+      "SkiaSharp.NativeAssets.Android/2.88.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -2746,26 +2746,26 @@
           "buildTransitive/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets": {}
         }
       },
-      "SkiaSharp.Views/2.88.3": {
+      "SkiaSharp.Views/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         },
         "runtime": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Core": "2.88.3"
+          "SkiaSharp.Views.Maui.Core": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
@@ -2778,10 +2778,10 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Controls": "2.88.3"
+          "SkiaSharp.Views.Maui.Controls": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.Compatibility.dll": {
@@ -2794,11 +2794,11 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Core/2.88.3": {
+      "SkiaSharp.Views.Maui.Core/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.Views": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.Views": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
@@ -4636,10 +4636,10 @@
       }
     },
     "net7.0-android33.0/android-arm64": {
-      "CommunityToolkit.Maui/5.2.0": {
+      "CommunityToolkit.Maui/5.3.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "5.2.0"
+          "CommunityToolkit.Maui.Core": "5.3.0"
         },
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.dll": {
@@ -4652,7 +4652,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/5.2.0": {
+      "CommunityToolkit.Maui.Core/5.3.0": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.Core.dll": {
@@ -4694,10 +4694,10 @@
           }
         }
       },
-      "HarfBuzzSharp/2.8.2.3": {
+      "HarfBuzzSharp/2.8.2.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.3"
+          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/HarfBuzzSharp.dll": {
@@ -4710,7 +4710,7 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.Android/2.8.2.3": {
+      "HarfBuzzSharp.NativeAssets.Android/2.8.2.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -4725,7 +4725,7 @@
           "buildTransitive/net6.0-android30.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
-      "LiveChartsCore/2.0.0-beta.810": {
+      "LiveChartsCore/2.0.0-beta.911": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.dll": {
@@ -4738,12 +4738,12 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.HarfBuzz": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.HarfBuzz": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.dll": {
@@ -4756,21 +4756,21 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.810",
-          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.911",
+          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.4-preview.84"
         },
         "compile": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -4958,7 +4958,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Maui.Graphics/7.0.86": {
+      "Microsoft.Maui.Graphics/7.0.92": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
@@ -5000,10 +5000,10 @@
           }
         }
       },
-      "SkiaSharp/2.88.3": {
+      "SkiaSharp/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.NativeAssets.Android": "2.88.3"
+          "SkiaSharp.NativeAssets.Android": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.dll": {
@@ -5016,11 +5016,11 @@
           }
         }
       },
-      "SkiaSharp.HarfBuzz/2.88.3": {
+      "SkiaSharp.HarfBuzz/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp": "2.8.2.3",
-          "SkiaSharp": "2.88.3"
+          "HarfBuzzSharp": "2.8.2.4-preview.84",
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
@@ -5033,7 +5033,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Android/2.88.3": {
+      "SkiaSharp.NativeAssets.Android/2.88.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -5048,26 +5048,26 @@
           "buildTransitive/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets": {}
         }
       },
-      "SkiaSharp.Views/2.88.3": {
+      "SkiaSharp.Views/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         },
         "runtime": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Core": "2.88.3"
+          "SkiaSharp.Views.Maui.Core": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
@@ -5080,10 +5080,10 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Controls": "2.88.3"
+          "SkiaSharp.Views.Maui.Controls": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.Compatibility.dll": {
@@ -5096,11 +5096,11 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Core/2.88.3": {
+      "SkiaSharp.Views.Maui.Core/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.Views": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.Views": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
@@ -6938,10 +6938,10 @@
       }
     },
     "net7.0-android33.0/android-x64": {
-      "CommunityToolkit.Maui/5.2.0": {
+      "CommunityToolkit.Maui/5.3.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "5.2.0"
+          "CommunityToolkit.Maui.Core": "5.3.0"
         },
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.dll": {
@@ -6954,7 +6954,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/5.2.0": {
+      "CommunityToolkit.Maui.Core/5.3.0": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.Core.dll": {
@@ -6996,10 +6996,10 @@
           }
         }
       },
-      "HarfBuzzSharp/2.8.2.3": {
+      "HarfBuzzSharp/2.8.2.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.3"
+          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/HarfBuzzSharp.dll": {
@@ -7012,7 +7012,7 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.Android/2.8.2.3": {
+      "HarfBuzzSharp.NativeAssets.Android/2.8.2.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -7027,7 +7027,7 @@
           "buildTransitive/net6.0-android30.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
-      "LiveChartsCore/2.0.0-beta.810": {
+      "LiveChartsCore/2.0.0-beta.911": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.dll": {
@@ -7040,12 +7040,12 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.HarfBuzz": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.HarfBuzz": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.dll": {
@@ -7058,21 +7058,21 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.810",
-          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.911",
+          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.4-preview.84"
         },
         "compile": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -7260,7 +7260,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Maui.Graphics/7.0.86": {
+      "Microsoft.Maui.Graphics/7.0.92": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
@@ -7302,10 +7302,10 @@
           }
         }
       },
-      "SkiaSharp/2.88.3": {
+      "SkiaSharp/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.NativeAssets.Android": "2.88.3"
+          "SkiaSharp.NativeAssets.Android": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.dll": {
@@ -7318,11 +7318,11 @@
           }
         }
       },
-      "SkiaSharp.HarfBuzz/2.88.3": {
+      "SkiaSharp.HarfBuzz/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp": "2.8.2.3",
-          "SkiaSharp": "2.88.3"
+          "HarfBuzzSharp": "2.8.2.4-preview.84",
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
@@ -7335,7 +7335,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Android/2.88.3": {
+      "SkiaSharp.NativeAssets.Android/2.88.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -7350,26 +7350,26 @@
           "buildTransitive/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets": {}
         }
       },
-      "SkiaSharp.Views/2.88.3": {
+      "SkiaSharp.Views/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         },
         "runtime": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Core": "2.88.3"
+          "SkiaSharp.Views.Maui.Core": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
@@ -7382,10 +7382,10 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Controls": "2.88.3"
+          "SkiaSharp.Views.Maui.Controls": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.Compatibility.dll": {
@@ -7398,11 +7398,11 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Core/2.88.3": {
+      "SkiaSharp.Views.Maui.Core/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.Views": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.Views": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
@@ -9240,10 +9240,10 @@
       }
     },
     "net7.0-android33.0/android-x86": {
-      "CommunityToolkit.Maui/5.2.0": {
+      "CommunityToolkit.Maui/5.3.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "5.2.0"
+          "CommunityToolkit.Maui.Core": "5.3.0"
         },
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.dll": {
@@ -9256,7 +9256,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/5.2.0": {
+      "CommunityToolkit.Maui.Core/5.3.0": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/CommunityToolkit.Maui.Core.dll": {
@@ -9298,10 +9298,10 @@
           }
         }
       },
-      "HarfBuzzSharp/2.8.2.3": {
+      "HarfBuzzSharp/2.8.2.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.3"
+          "HarfBuzzSharp.NativeAssets.Android": "2.8.2.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/HarfBuzzSharp.dll": {
@@ -9314,7 +9314,7 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.Android/2.8.2.3": {
+      "HarfBuzzSharp.NativeAssets.Android/2.8.2.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -9329,7 +9329,7 @@
           "buildTransitive/net6.0-android30.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
-      "LiveChartsCore/2.0.0-beta.810": {
+      "LiveChartsCore/2.0.0-beta.911": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.dll": {
@@ -9342,12 +9342,12 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.HarfBuzz": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.HarfBuzz": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.dll": {
@@ -9360,21 +9360,21 @@
           }
         }
       },
-      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.810": {
+      "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.911": {
         "type": "package",
         "dependencies": {
-          "LiveChartsCore": "2.0.0-beta.810",
-          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.810",
-          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.3"
+          "LiveChartsCore": "2.0.0-beta.911",
+          "LiveChartsCore.SkiaSharpView": "2.0.0-beta.911",
+          "SkiaSharp.Views.Maui.Controls.Compatibility": "2.88.4-preview.84"
         },
         "compile": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
-            "related": ".xml"
+          "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -9562,7 +9562,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Maui.Graphics/7.0.86": {
+      "Microsoft.Maui.Graphics/7.0.92": {
         "type": "package",
         "compile": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
@@ -9604,10 +9604,10 @@
           }
         }
       },
-      "SkiaSharp/2.88.3": {
+      "SkiaSharp/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.NativeAssets.Android": "2.88.3"
+          "SkiaSharp.NativeAssets.Android": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.dll": {
@@ -9620,11 +9620,11 @@
           }
         }
       },
-      "SkiaSharp.HarfBuzz/2.88.3": {
+      "SkiaSharp.HarfBuzz/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "HarfBuzzSharp": "2.8.2.3",
-          "SkiaSharp": "2.88.3"
+          "HarfBuzzSharp": "2.8.2.4-preview.84",
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
@@ -9637,7 +9637,7 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.Android/2.88.3": {
+      "SkiaSharp.NativeAssets.Android/2.88.4-preview.84": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/_._": {}
@@ -9652,26 +9652,26 @@
           "buildTransitive/net6.0-android30.0/SkiaSharp.NativeAssets.Android.targets": {}
         }
       },
-      "SkiaSharp.Views/2.88.3": {
+      "SkiaSharp.Views/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         },
         "runtime": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll": {
-            "related": ".pdb;.xml"
+            "related": ".aar;.pdb;.xml"
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Core": "2.88.3"
+          "SkiaSharp.Views.Maui.Core": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.dll": {
@@ -9684,10 +9684,10 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.3": {
+      "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp.Views.Maui.Controls": "2.88.3"
+          "SkiaSharp.Views.Maui.Controls": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Controls.Compatibility.dll": {
@@ -9700,11 +9700,11 @@
           }
         }
       },
-      "SkiaSharp.Views.Maui.Core/2.88.3": {
+      "SkiaSharp.Views.Maui.Core/2.88.4-preview.84": {
         "type": "package",
         "dependencies": {
-          "SkiaSharp": "2.88.3",
-          "SkiaSharp.Views": "2.88.3"
+          "SkiaSharp": "2.88.4-preview.84",
+          "SkiaSharp.Views": "2.88.4-preview.84"
         },
         "compile": {
           "lib/net6.0-android30.0/SkiaSharp.Views.Maui.Core.dll": {
@@ -11543,10 +11543,10 @@
     }
   },
   "libraries": {
-    "CommunityToolkit.Maui/5.2.0": {
-      "sha512": "sxnvz+lFqTAzc+3u4j7JuEDiDxybMqbjCRD/OcMyln6YJ09OPwXoCJ8qxFG98C9ph9ZSChE3/fsVG+jlnkMOHA==",
+    "CommunityToolkit.Maui/5.3.0": {
+      "sha512": "vzZzhVp7o+ipkW/zT6ZXst2mJemPrzGsO5Dbw3NoMpRhn0LapS0tmmegGAuv6AlcUM8/JROr7rF2J+t/LgLMqQ==",
       "type": "package",
-      "path": "communitytoolkit.maui/5.2.0",
+      "path": "communitytoolkit.maui/5.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -11554,7 +11554,7 @@
         "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.CodeFixes.dll",
         "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.dll",
         "analyzers/dotnet/cs/CommunityToolkit.Maui.SourceGenerators.dll",
-        "communitytoolkit.maui.5.2.0.nupkg.sha512",
+        "communitytoolkit.maui.5.3.0.nupkg.sha512",
         "communitytoolkit.maui.nuspec",
         "icon.png",
         "lib/net7.0-android33.0/CommunityToolkit.Maui.aar",
@@ -11572,15 +11572,15 @@
         "lib/net7.0/CommunityToolkit.Maui.xml"
       ]
     },
-    "CommunityToolkit.Maui.Core/5.2.0": {
-      "sha512": "lWJJgyJSDF81Wz40IvoQhOPGsFa7WAUG0rKtu0NnnFT0AF2PtPkzBX6kzpm3zZfg91UKXPRhZpXhEVs/QisCiA==",
+    "CommunityToolkit.Maui.Core/5.3.0": {
+      "sha512": "fy7jBKU3uxWFXXUeLZ3NnZOQgxZ6CdiGJNXLEUnt8T5Bsnp2/Vlwl6TAGf3q4B1ToJUNLJOMoGxaRP25ktevSQ==",
       "type": "package",
-      "path": "communitytoolkit.maui.core/5.2.0",
+      "path": "communitytoolkit.maui.core/5.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ReadMe.txt",
-        "communitytoolkit.maui.core.5.2.0.nupkg.sha512",
+        "communitytoolkit.maui.core.5.3.0.nupkg.sha512",
         "communitytoolkit.maui.core.nuspec",
         "icon.png",
         "lib/net7.0-android33.0/CommunityToolkit.Maui.Core.aar",
@@ -11647,16 +11647,16 @@
         "lib/net6.0-android31.0/GoogleGson.xml"
       ]
     },
-    "HarfBuzzSharp/2.8.2.3": {
-      "sha512": "8MwXm9J4dXHuTdzPo29nHgDbt4+6P+RrPrH/qrxcERf29cpLlFbjvP3eFPwHmdUrl4KL2SHEZi2ZuQ5ndeIL1w==",
+    "HarfBuzzSharp/2.8.2.4-preview.84": {
+      "sha512": "m6bbMBcLCkFORVsH3fYMVfRpdApExh1Bjbex7y48dkLtVJg6THe77/Gq0gQ6hSYHFx3IFSrLKcrOw7zNaHyyrw==",
       "type": "package",
-      "path": "harfbuzzsharp/2.8.2.3",
+      "path": "harfbuzzsharp/2.8.2.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "THIRD-PARTY-NOTICES.txt",
-        "harfbuzzsharp.2.8.2.3.nupkg.sha512",
+        "harfbuzzsharp.2.8.2.4-preview.84.nupkg.sha512",
         "harfbuzzsharp.nuspec",
         "lib/monoandroid1.0/HarfBuzzSharp.dll",
         "lib/monoandroid1.0/HarfBuzzSharp.pdb",
@@ -11664,9 +11664,6 @@
         "lib/net462/HarfBuzzSharp.dll",
         "lib/net462/HarfBuzzSharp.pdb",
         "lib/net462/HarfBuzzSharp.xml",
-        "lib/net5.0/HarfBuzzSharp.dll",
-        "lib/net5.0/HarfBuzzSharp.pdb",
-        "lib/net5.0/HarfBuzzSharp.xml",
         "lib/net6.0-android30.0/HarfBuzzSharp.dll",
         "lib/net6.0-android30.0/HarfBuzzSharp.pdb",
         "lib/net6.0-android30.0/HarfBuzzSharp.xml",
@@ -11720,10 +11717,10 @@
         "lib/xamarinwatchos1.0/HarfBuzzSharp.xml"
       ]
     },
-    "HarfBuzzSharp.NativeAssets.Android/2.8.2.3": {
-      "sha512": "mPQJyt1ABLKq8fNU0eFlpwyRdVQAdVOd/6RBYY7CllofVBg74LjHas2N1HqmJoEK9aliXn60XdFYGS+f/oGhfQ==",
+    "HarfBuzzSharp.NativeAssets.Android/2.8.2.4-preview.84": {
+      "sha512": "M5tyR40X0GVjZF3E3wKpoCC6h7kzP/ySI6mBiHTPXB9NuQWffVxKNoyESqQtUmKwWq5N9MiNUOosBsA891/4Rw==",
       "type": "package",
-      "path": "harfbuzzsharp.nativeassets.android/2.8.2.3",
+      "path": "harfbuzzsharp.nativeassets.android/2.8.2.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -11733,7 +11730,7 @@
         "build/net6.0-android30.0/HarfBuzzSharp.NativeAssets.Android.targets",
         "buildTransitive/monoandroid1.0/HarfBuzzSharp.NativeAssets.Android.targets",
         "buildTransitive/net6.0-android30.0/HarfBuzzSharp.NativeAssets.Android.targets",
-        "harfbuzzsharp.nativeassets.android.2.8.2.3.nupkg.sha512",
+        "harfbuzzsharp.nativeassets.android.2.8.2.4-preview.84.nupkg.sha512",
         "harfbuzzsharp.nativeassets.android.nuspec",
         "lib/monoandroid1.0/_._",
         "lib/net6.0-android30.0/_._",
@@ -11743,10 +11740,10 @@
         "runtimes/android-x86/native/libHarfBuzzSharp.so"
       ]
     },
-    "LiveChartsCore/2.0.0-beta.810": {
-      "sha512": "b9qZVXu0KMwFZJLpv36o1UawCwLcSf0MRbc8wNyx9aUVhCaG39Xd+zRv1AVcz/tfjYKFnZlEGH2bAOV9h1dH2A==",
+    "LiveChartsCore/2.0.0-beta.911": {
+      "sha512": "vPvPzdEGXdZ72vhnnWk/iS68fIyv9sW8VSGHWQdsVJskdQc5Axvrbyx3TAqrvU81LBLmxW4auyYpqRbXoqKHnQ==",
       "type": "package",
-      "path": "livechartscore/2.0.0-beta.810",
+      "path": "livechartscore/2.0.0-beta.911",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -11763,14 +11760,14 @@
         "lib/netcoreapp2.0/LiveChartsCore.xml",
         "lib/netstandard2.0/LiveChartsCore.dll",
         "lib/netstandard2.0/LiveChartsCore.xml",
-        "livechartscore.2.0.0-beta.810.nupkg.sha512",
+        "livechartscore.2.0.0-beta.911.nupkg.sha512",
         "livechartscore.nuspec"
       ]
     },
-    "LiveChartsCore.SkiaSharpView/2.0.0-beta.810": {
-      "sha512": "mHotSKnwGb31ppfevU43rUWcsWKdUavegdesfM2qbtr7LAgGf3hGXzY6ecbab/y1tN+pGyfDA7WwF5gI8sFMPg==",
+    "LiveChartsCore.SkiaSharpView/2.0.0-beta.911": {
+      "sha512": "wVvwE1fS/7DHt8iqg59XuR1VMvT6m1sYpqEo8Z8F0U6eOa16y09XD1jqscNDw+nXHbXtxhzP5uHYzF2T0dA14g==",
       "type": "package",
-      "path": "livechartscore.skiasharpview/2.0.0-beta.810",
+      "path": "livechartscore.skiasharpview/2.0.0-beta.911",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -11787,27 +11784,30 @@
         "lib/netcoreapp2.0/LiveChartsCore.SkiaSharpView.xml",
         "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.dll",
         "lib/netstandard2.0/LiveChartsCore.SkiaSharpView.xml",
-        "livechartscore.skiasharpview.2.0.0-beta.810.nupkg.sha512",
+        "livechartscore.skiasharpview.2.0.0-beta.911.nupkg.sha512",
         "livechartscore.skiasharpview.nuspec"
       ]
     },
-    "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.810": {
-      "sha512": "TDgjC8YzAXbPw8J3dshA96FbWQUt/PQac6HseEll9524GfxkK2JteptrRHPkAdrGAzhHgyd/EWbVEdWAooaCtg==",
+    "LiveChartsCore.SkiaSharpView.Maui/2.0.0-beta.911": {
+      "sha512": "ttPh3CUDkEYQ6PuOpyvut122JwmHBCWBue8yrtUE6KfNmlFbrOdEF9nIYpoF0At7xQxj+Zq7JK3OG3iqEX5HHA==",
       "type": "package",
-      "path": "livechartscore.skiasharpview.maui/2.0.0-beta.810",
+      "path": "livechartscore.skiasharpview.maui/2.0.0-beta.911",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.png",
-        "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.dll",
-        "lib/net6.0-android31.0/LiveChartsCore.SkiaSharpView.Maui.xml",
-        "lib/net6.0-ios16.1/LiveChartsCore.SkiaSharpView.Maui.dll",
-        "lib/net6.0-ios16.1/LiveChartsCore.SkiaSharpView.Maui.xml",
-        "lib/net6.0-maccatalyst16.1/LiveChartsCore.SkiaSharpView.Maui.dll",
-        "lib/net6.0-maccatalyst16.1/LiveChartsCore.SkiaSharpView.Maui.xml",
-        "lib/net6.0/LiveChartsCore.SkiaSharpView.Maui.dll",
-        "lib/net6.0/LiveChartsCore.SkiaSharpView.Maui.xml",
-        "livechartscore.skiasharpview.maui.2.0.0-beta.810.nupkg.sha512",
+        "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.aar",
+        "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.dll",
+        "lib/net7.0-android33.0/LiveChartsCore.SkiaSharpView.Maui.xml",
+        "lib/net7.0-ios16.1/LiveChartsCore.SkiaSharpView.Maui.dll",
+        "lib/net7.0-ios16.1/LiveChartsCore.SkiaSharpView.Maui.xml",
+        "lib/net7.0-maccatalyst16.1/LiveChartsCore.SkiaSharpView.Maui.dll",
+        "lib/net7.0-maccatalyst16.1/LiveChartsCore.SkiaSharpView.Maui.xml",
+        "lib/net7.0-windows10.0.19041/LiveChartsCore.SkiaSharpView.Maui.dll",
+        "lib/net7.0-windows10.0.19041/LiveChartsCore.SkiaSharpView.Maui.xml",
+        "lib/net7.0/LiveChartsCore.SkiaSharpView.Maui.dll",
+        "lib/net7.0/LiveChartsCore.SkiaSharpView.Maui.xml",
+        "livechartscore.skiasharpview.maui.2.0.0-beta.911.nupkg.sha512",
         "livechartscore.skiasharpview.maui.nuspec"
       ]
     },
@@ -12125,10 +12125,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Maui.Graphics/7.0.86": {
-      "sha512": "v0VB9NhVrJarOzl7BHs2LaFQE+syKQ8o1Wbs+I4CGxmQO4cosmoFPUa0ogp1oaJe8Tazu504+P8JDy8fhDsSKQ==",
+    "Microsoft.Maui.Graphics/7.0.92": {
+      "sha512": "fe9pKhm5LZGsAbEZQg7VEHGer76h8m8VPkGRWJ4P0+3QMu3yXOYmOiA60Wskjk8Mrd6eXZCQUWTTeley1agYQg==",
       "type": "package",
-      "path": "microsoft.maui.graphics/7.0.86",
+      "path": "microsoft.maui.graphics/7.0.92",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12164,7 +12164,7 @@
         "lib/netstandard2.1/Microsoft.Maui.Graphics.dll",
         "lib/netstandard2.1/Microsoft.Maui.Graphics.pdb",
         "lib/netstandard2.1/Microsoft.Maui.Graphics.xml",
-        "microsoft.maui.graphics.7.0.86.nupkg.sha512",
+        "microsoft.maui.graphics.7.0.92.nupkg.sha512",
         "microsoft.maui.graphics.nuspec"
       ]
     },
@@ -12230,10 +12230,10 @@
         "plugin.localnotification.nuspec"
       ]
     },
-    "SkiaSharp/2.88.3": {
-      "sha512": "GG8X3EdfwyBfwjl639UIiOVOKEdeoqDgYrz0P1MUCnefXt9cofN+AK8YB/v1+5cLMr03ieWCQdDmPqnFIzSxZw==",
+    "SkiaSharp/2.88.4-preview.84": {
+      "sha512": "eJViz734hXDd6O+Glng6s9mVFHGkFlwAWZYylAygF6bJ2u6wd08jiuraDIBqpmAngOYtXsoJNAkXX9sMGD9WEw==",
       "type": "package",
-      "path": "skiasharp/2.88.3",
+      "path": "skiasharp/2.88.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12246,9 +12246,6 @@
         "lib/net462/SkiaSharp.dll",
         "lib/net462/SkiaSharp.pdb",
         "lib/net462/SkiaSharp.xml",
-        "lib/net5.0/SkiaSharp.dll",
-        "lib/net5.0/SkiaSharp.pdb",
-        "lib/net5.0/SkiaSharp.xml",
         "lib/net6.0-android30.0/SkiaSharp.dll",
         "lib/net6.0-android30.0/SkiaSharp.pdb",
         "lib/net6.0-android30.0/SkiaSharp.xml",
@@ -12303,14 +12300,14 @@
         "lib/xamarinwatchos1.0/SkiaSharp.dll",
         "lib/xamarinwatchos1.0/SkiaSharp.pdb",
         "lib/xamarinwatchos1.0/SkiaSharp.xml",
-        "skiasharp.2.88.3.nupkg.sha512",
+        "skiasharp.2.88.4-preview.84.nupkg.sha512",
         "skiasharp.nuspec"
       ]
     },
-    "SkiaSharp.HarfBuzz/2.88.3": {
-      "sha512": "hH6v4ltTb34eqn5tx1qLSAN7O+ppZCV5DnZw0FR7RwxXYqCeQYbBNgsaPyrZ1nkvtCDD1pH79taeO6SvqG+IAg==",
+    "SkiaSharp.HarfBuzz/2.88.4-preview.84": {
+      "sha512": "pxWsQOePph9xZlShvvbs0SV3UXHtg7LLR2No8dX8GGhdr1XX6PyLM2DU9cRhi9O0lQ94iTjxc6NeHm1YL8AbPQ==",
       "type": "package",
-      "path": "skiasharp.harfbuzz/2.88.3",
+      "path": "skiasharp.harfbuzz/2.88.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12318,9 +12315,6 @@
         "lib/net462/SkiaSharp.HarfBuzz.dll",
         "lib/net462/SkiaSharp.HarfBuzz.pdb",
         "lib/net462/SkiaSharp.HarfBuzz.xml",
-        "lib/net5.0/SkiaSharp.HarfBuzz.dll",
-        "lib/net5.0/SkiaSharp.HarfBuzz.pdb",
-        "lib/net5.0/SkiaSharp.HarfBuzz.xml",
         "lib/net6.0/SkiaSharp.HarfBuzz.dll",
         "lib/net6.0/SkiaSharp.HarfBuzz.pdb",
         "lib/net6.0/SkiaSharp.HarfBuzz.xml",
@@ -12336,14 +12330,14 @@
         "lib/netstandard2.1/SkiaSharp.HarfBuzz.dll",
         "lib/netstandard2.1/SkiaSharp.HarfBuzz.pdb",
         "lib/netstandard2.1/SkiaSharp.HarfBuzz.xml",
-        "skiasharp.harfbuzz.2.88.3.nupkg.sha512",
+        "skiasharp.harfbuzz.2.88.4-preview.84.nupkg.sha512",
         "skiasharp.harfbuzz.nuspec"
       ]
     },
-    "SkiaSharp.NativeAssets.Android/2.88.3": {
-      "sha512": "AMBVT1BIjnnWNcH4BPE1arJrrMJSTODRNvDZFbNufYVCzfAFaqA5YLU6vaolUKC18/EoFQQmVl+Ne3l90SV+yQ==",
+    "SkiaSharp.NativeAssets.Android/2.88.4-preview.84": {
+      "sha512": "NRY7FqhbLDq0DzdDegH/NglqQZHTkGSQJtGmz257I9psKw8Usj9JfzNhkwd0v6TYwsZLOXrhZ+oix2UdL6N1UQ==",
       "type": "package",
-      "path": "skiasharp.nativeassets.android/2.88.3",
+      "path": "skiasharp.nativeassets.android/2.88.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12359,14 +12353,14 @@
         "runtimes/android-arm64/native/libSkiaSharp.so",
         "runtimes/android-x64/native/libSkiaSharp.so",
         "runtimes/android-x86/native/libSkiaSharp.so",
-        "skiasharp.nativeassets.android.2.88.3.nupkg.sha512",
+        "skiasharp.nativeassets.android.2.88.4-preview.84.nupkg.sha512",
         "skiasharp.nativeassets.android.nuspec"
       ]
     },
-    "SkiaSharp.Views/2.88.3": {
-      "sha512": "+ForGhGT7uunE+Upu3mrdi3I37W4kzDyqHIDOzl4xul9wFVFmLWLHF6R8EMFSxK0TSKGN88XpKXgWuZDRjjBtA==",
+    "SkiaSharp.Views/2.88.4-preview.84": {
+      "sha512": "jAS4tWglGrySSkz8IJy2R+qb3jfni3v9UEnBFiNHe7LXk7uAl1aWK7zX0j0tuPXawqSkJIDH8mafi4Kzcf1WCw==",
       "type": "package",
-      "path": "skiasharp.views/2.88.3",
+      "path": "skiasharp.views/2.88.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12377,6 +12371,7 @@
         "lib/net462/SkiaSharp.Views.Desktop.dll",
         "lib/net462/SkiaSharp.Views.Desktop.pdb",
         "lib/net462/SkiaSharp.Views.Desktop.xml",
+        "lib/net6.0-android30.0/SkiaSharp.Views.Android.aar",
         "lib/net6.0-android30.0/SkiaSharp.Views.Android.dll",
         "lib/net6.0-android30.0/SkiaSharp.Views.Android.pdb",
         "lib/net6.0-android30.0/SkiaSharp.Views.Android.xml",
@@ -12417,14 +12412,14 @@
         "runtimes/win10-arm64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
         "runtimes/win10-x64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
         "runtimes/win10-x86/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "skiasharp.views.2.88.3.nupkg.sha512",
+        "skiasharp.views.2.88.4-preview.84.nupkg.sha512",
         "skiasharp.views.nuspec"
       ]
     },
-    "SkiaSharp.Views.Maui.Controls/2.88.3": {
-      "sha512": "fvnvZdfWFYrptu37ul9/rT3QOdhrSUrMrBsHWcDpanVM04KOpHBWJDv/LEsD0jp1rE7TPIXXQk1RXutfXSYveg==",
+    "SkiaSharp.Views.Maui.Controls/2.88.4-preview.84": {
+      "sha512": "uiCn9YgWwHiPM1ZDJNx7LXS+eRRgO5qgYWlgs8l7H9gCz7ewcC7rr/vzSAHrGOgouMMGnicnXGnqX41D6sTWfg==",
       "type": "package",
-      "path": "skiasharp.views.maui.controls/2.88.3",
+      "path": "skiasharp.views.maui.controls/2.88.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12447,14 +12442,14 @@
         "lib/net6.0/SkiaSharp.Views.Maui.Controls.dll",
         "lib/net6.0/SkiaSharp.Views.Maui.Controls.pdb",
         "lib/net6.0/SkiaSharp.Views.Maui.Controls.xml",
-        "skiasharp.views.maui.controls.2.88.3.nupkg.sha512",
+        "skiasharp.views.maui.controls.2.88.4-preview.84.nupkg.sha512",
         "skiasharp.views.maui.controls.nuspec"
       ]
     },
-    "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.3": {
-      "sha512": "oQO25hl9emcfeUSIlcNY+cEYQ171PFHbYhjw3dptgpVLgX97e9Y6yNHcchxcTTdyiNuK8E9oEBSx8K709nUvnw==",
+    "SkiaSharp.Views.Maui.Controls.Compatibility/2.88.4-preview.84": {
+      "sha512": "08SBAIN0cvsnVyO0toGk6FTS8qdovyHynNY67dD9MZ8s1UH7XF10FOzVIdOyopWOdDPGRxYmRRdUX6e/C6Z5mg==",
       "type": "package",
-      "path": "skiasharp.views.maui.controls.compatibility/2.88.3",
+      "path": "skiasharp.views.maui.controls.compatibility/2.88.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12477,14 +12472,14 @@
         "lib/net6.0/SkiaSharp.Views.Maui.Controls.Compatibility.dll",
         "lib/net6.0/SkiaSharp.Views.Maui.Controls.Compatibility.pdb",
         "lib/net6.0/SkiaSharp.Views.Maui.Controls.Compatibility.xml",
-        "skiasharp.views.maui.controls.compatibility.2.88.3.nupkg.sha512",
+        "skiasharp.views.maui.controls.compatibility.2.88.4-preview.84.nupkg.sha512",
         "skiasharp.views.maui.controls.compatibility.nuspec"
       ]
     },
-    "SkiaSharp.Views.Maui.Core/2.88.3": {
-      "sha512": "kP7m/DxrGeitgaN9hU7UmOeV4mRMfKdRf+z/SrAJhk2PXJSQJr3jnpBIBr3STTCkWBOuPzw0svQhwonrI2rj5g==",
+    "SkiaSharp.Views.Maui.Core/2.88.4-preview.84": {
+      "sha512": "Xi2yWPQ/Ey9Bn8ba0uwsL9Ti4isiOeMBhSJ2cF+fpkyav8phuA0V0TTW+cRqtmVYW46Cw6soQ1PnhPTw3IoLaQ==",
       "type": "package",
-      "path": "skiasharp.views.maui.core/2.88.3",
+      "path": "skiasharp.views.maui.core/2.88.4-preview.84",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12507,7 +12502,7 @@
         "lib/net6.0/SkiaSharp.Views.Maui.Core.dll",
         "lib/net6.0/SkiaSharp.Views.Maui.Core.pdb",
         "lib/net6.0/SkiaSharp.Views.Maui.Core.xml",
-        "skiasharp.views.maui.core.2.88.3.nupkg.sha512",
+        "skiasharp.views.maui.core.2.88.4-preview.84.nupkg.sha512",
         "skiasharp.views.maui.core.nuspec"
       ]
     },
@@ -14628,16 +14623,16 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-android33.0": [
-      "CommunityToolkit.Maui >= 5.2.0",
+      "CommunityToolkit.Maui >= 5.3.0",
       "CommunityToolkit.Mvvm >= 8.2.1",
-      "LiveChartsCore.SkiaSharpView.Maui >= 2.0.0-beta.810",
+      "LiveChartsCore.SkiaSharpView.Maui >= 2.0.0-beta.911",
       "Microcharts >= 0.9.5.9",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
-      "Microsoft.Maui.Graphics >= 7.0.86",
+      "Microsoft.Maui.Graphics >= 7.0.92",
       "Newtonsoft.Json >= 13.0.3",
       "Plugin.LocalNotification >= 10.1.8",
       "Xamarin.Android.Glide >= 4.13.2.2",
@@ -14701,7 +14696,7 @@
         "dependencies": {
           "CommunityToolkit.Maui": {
             "target": "Package",
-            "version": "[5.2.0, )"
+            "version": "[5.3.0, )"
           },
           "CommunityToolkit.Mvvm": {
             "target": "Package",
@@ -14709,7 +14704,7 @@
           },
           "LiveChartsCore.SkiaSharpView.Maui": {
             "target": "Package",
-            "version": "[2.0.0-beta.810, )"
+            "version": "[2.0.0-beta.911, )"
           },
           "Microcharts": {
             "target": "Package",
@@ -14741,7 +14736,7 @@
           },
           "Microsoft.Maui.Graphics": {
             "target": "Package",
-            "version": "[7.0.86, )",
+            "version": "[7.0.92, )",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
@@ -14836,7 +14831,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

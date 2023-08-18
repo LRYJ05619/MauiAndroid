@@ -13,7 +13,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Threading;
+using Android.App;
+using Console.View.Other;
 
 namespace Console.ViewModel
 {
@@ -43,6 +46,7 @@ namespace Console.ViewModel
 
         private Timer timer;
         private bool isTimerRunning = false;
+        private int NotifyID = 0;
 
         //设备状态
         public ObservableValue DevicePollingValue { get; set; }
@@ -129,6 +133,14 @@ namespace Console.ViewModel
                 //项目ID获取
                 var projectsList = await itemIDGetReponsitory.ItemIDGet(userReserve);
 
+                if (itemIDGetReponsitory.StatusCode != HttpStatusCode.OK)
+                {
+                    await Shell.Current.GoToAsync($"//{nameof(ErrPage)}", true,
+                        new Dictionary<string, object>
+                        {
+                            { "StatusCode", itemIDGetReponsitory.StatusCode }
+                        });
+                }
                 //设备状态获取
                 DeviceStatuCount = await deviceStatuCountGetReponsitory.StatuCountGet(projectsList, userReserve);
 
@@ -277,6 +289,7 @@ namespace Console.ViewModel
                     Title = $"{alertsDatum.project} · {alertsDatum.leave}",
                     Description = $"{alertsDatum.sensorName}    {alertsDatum.time}",
                     BadgeNumber = 1, //小红点
+                    NotificationId = NotifyID,
 
                     Android = new AndroidOptions
                     {
@@ -284,6 +297,7 @@ namespace Console.ViewModel
                         Priority = AndroidPriority.Max
                     }
                 };
+                NotifyID++;
                 await LocalNotificationCenter.Current.Show(request);
             }
             catch (Exception ex)

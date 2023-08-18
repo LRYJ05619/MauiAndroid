@@ -1,6 +1,7 @@
 ﻿using Console.Model;
 using Console.Serivices.Interface;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http.Json;
 using static Android.Content.ClipData;
 
@@ -9,6 +10,8 @@ namespace Console.Serivices.Server
     public class ItemIdGetService
     {
         HttpClient client;
+
+        public HttpStatusCode StatusCode;
 
         public ItemIdGetService()
         {
@@ -25,6 +28,8 @@ namespace Console.Serivices.Server
                 var url = "http://" + reserve.ipaddr + "/projects?limit=50&offset=0";
 
                 var response = await client.GetAsync(url);
+
+                StatusCode = response.StatusCode;
 
                 ItemID userResponse = new();
                 List<Project> projectList = new();

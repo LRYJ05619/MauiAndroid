@@ -14,7 +14,6 @@ namespace Console.Serivices.Interface
 {
     public class LoginService : ILoginReponsitory
     {
-
         HttpClient httpClient;
 
         public LoginService()

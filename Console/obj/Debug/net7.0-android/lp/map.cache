@@ -168,12 +168,14 @@ glide.aar
 CommunityToolkit.Maui.Core.aar
 CommunityToolkit.Maui.aar
 GoogleGson.aar
+LiveChartsCore.SkiaSharpView.Maui.aar
 Microsoft.Maui.Controls.aar
 Microsoft.Maui.Controls.Compatibility.aar
 maui.aar
 Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 Plugin.LocalNotification.aar
+SkiaSharp.Views.Android.aar
 Xamarin.Google.Crypto.Tink.Android.aar
 play-services-base.aar
 play-services-basement.aar

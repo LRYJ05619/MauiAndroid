@@ -14,14 +14,14 @@ public final class R {
 		public static final int clearTop = 0x7f0300cd;
 		public static final int finishPrimaryWithSecondary = 0x7f0301b6;
 		public static final int finishSecondaryWithPrimary = 0x7f0301b7;
-		public static final int placeholderActivityName = 0x7f030352;
-		public static final int primaryActivityName = 0x7f030366;
-		public static final int secondaryActivityAction = 0x7f03038f;
-		public static final int secondaryActivityName = 0x7f030390;
-		public static final int splitLayoutDirection = 0x7f0303bc;
-		public static final int splitMinSmallestWidth = 0x7f0303bd;
-		public static final int splitMinWidth = 0x7f0303be;
-		public static final int splitRatio = 0x7f0303bf;
+		public static final int placeholderActivityName = 0x7f030353;
+		public static final int primaryActivityName = 0x7f030367;
+		public static final int secondaryActivityAction = 0x7f030390;
+		public static final int secondaryActivityName = 0x7f030391;
+		public static final int splitLayoutDirection = 0x7f0303bd;
+		public static final int splitMinSmallestWidth = 0x7f0303be;
+		public static final int splitMinWidth = 0x7f0303bf;
+		public static final int splitRatio = 0x7f0303c0;
 	}
 	public static final class id {
 		public static final int androidx_window_activity_scope = 0x7f08004f;
@@ -35,11 +35,11 @@ public final class R {
 		public static final int ActivityFilter_activityName = 1;
 		public static final int[] ActivityRule = new int[] { 0x7f030032 };
 		public static final int ActivityRule_alwaysExpand = 0;
-		public static final int[] SplitPairFilter = new int[] { 0x7f030366, 0x7f03038f, 0x7f030390 };
+		public static final int[] SplitPairFilter = new int[] { 0x7f030367, 0x7f030390, 0x7f030391 };
 		public static final int SplitPairFilter_primaryActivityName = 0;
 		public static final int SplitPairFilter_secondaryActivityAction = 1;
 		public static final int SplitPairFilter_secondaryActivityName = 2;
-		public static final int[] SplitPairRule = new int[] { 0x7f0300cd, 0x7f0301b6, 0x7f0301b7, 0x7f0303bc, 0x7f0303bd, 0x7f0303be, 0x7f0303bf };
+		public static final int[] SplitPairRule = new int[] { 0x7f0300cd, 0x7f0301b6, 0x7f0301b7, 0x7f0303bd, 0x7f0303be, 0x7f0303bf, 0x7f0303c0 };
 		public static final int SplitPairRule_clearTop = 0;
 		public static final int SplitPairRule_finishPrimaryWithSecondary = 1;
 		public static final int SplitPairRule_finishSecondaryWithPrimary = 2;
@@ -47,7 +47,7 @@ public final class R {
 		public static final int SplitPairRule_splitMinSmallestWidth = 4;
 		public static final int SplitPairRule_splitMinWidth = 5;
 		public static final int SplitPairRule_splitRatio = 6;
-		public static final int[] SplitPlaceholderRule = new int[] { 0x7f030352, 0x7f0303bc, 0x7f0303bd, 0x7f0303be, 0x7f0303bf };
+		public static final int[] SplitPlaceholderRule = new int[] { 0x7f030353, 0x7f0303bd, 0x7f0303be, 0x7f0303bf, 0x7f0303c0 };
 		public static final int SplitPlaceholderRule_placeholderActivityName = 0;
 		public static final int SplitPlaceholderRule_splitLayoutDirection = 1;
 		public static final int SplitPlaceholderRule_splitMinSmallestWidth = 2;
