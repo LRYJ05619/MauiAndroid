@@ -26,7 +26,10 @@
                 </StackLayout>
             </Frame>
 
-            <Button Text="登录" BackgroundColor="#58D68D" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding LoginCommand}"/>
+            <Button Text="登录" BackgroundColor="#58D68D" 
+                    FontAttributes="Bold" CornerRadius="30" WidthRequest="200" 
+                    Margin="0,15,0,0" 
+                    Command="{Binding LoginCommand}"/>
         </StackLayout>
     </Grid>
 

@@ -104,7 +104,7 @@ namespace Console.ViewModel.MainViewModel
                 new PieSeries<ObservableValue>
                 {
                     Values = new ObservableCollection<ObservableValue> { Allleave1Value }, 
-                    InnerRadius = 128,
+                    InnerRadius = 42,
                     Name = "轻度预警",
                     Fill = new SolidColorPaint(SKColors.Yellow),
                 },
@@ -112,7 +112,7 @@ namespace Console.ViewModel.MainViewModel
                 new PieSeries<ObservableValue>
                 {
                     Values = new ObservableCollection<ObservableValue> { Allleave2Value }, 
-                    InnerRadius = 128,
+                    InnerRadius = 42,
                     Name = "中度预警",
                     Fill = new SolidColorPaint(SKColors.Orange),
                 },
@@ -120,7 +120,8 @@ namespace Console.ViewModel.MainViewModel
                 new PieSeries<ObservableValue>
                 {
                     Values = new ObservableCollection<ObservableValue> { Allleave3Value },
-                    InnerRadius = 128,
+                    InnerRadius = 42,
+                    MaxOuterRadius = 1.3,
                     Name = "重度预警",
                     Fill = new SolidColorPaint(SKColors.Red),
                 }

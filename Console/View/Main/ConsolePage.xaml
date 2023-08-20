@@ -96,7 +96,7 @@
                                           LegendPosition="Right"
                                           LegendTextPaint="{Binding LegendPaint}"
                                           TooltipPosition="Hidden"
-                                          LegendTextSize="30">
+                                          LegendTextSize="10">
                             </lvc:PieChart>
 
                         </Grid>
