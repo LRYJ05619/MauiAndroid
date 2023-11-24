@@ -1,15 +1,14 @@
 using CommunityToolkit.Maui.Alerts;
 using Console.ViewModel.MainViewModel;
-using Microsoft.Maui.Controls;
 
 namespace Console.View.Main;
 
 public partial class NotifyPage : ContentPage
 {
-	public NotifyPage(NotifyPageViewModel notifyPageViewModel)
-	{
-		InitializeComponent();
-		BindingContext = notifyPageViewModel;
+    public NotifyPage(NotifyPageViewModel notifyPageViewModel)
+    {
+        InitializeComponent();
+        BindingContext = notifyPageViewModel;
     }
 
     private static bool isBackPressed = false;

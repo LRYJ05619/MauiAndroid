@@ -1,10 +1,7 @@
-﻿using System.Diagnostics;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Console.Model;
-using Console.Serivices;
 using Console.Serivices.Interface;
-using Console.View;
 using Console.View.Main;
 using Newtonsoft.Json;
 
@@ -16,7 +13,7 @@ namespace Console.ViewModel.SatrtupViewModel
         private string _userName;
         [ObservableProperty]
         private string _password;
-        [ObservableProperty] 
+        [ObservableProperty]
         private string _ipAddr;
 
         private readonly ILoginReponsitory loginReponsitory = new LoginService();
@@ -39,8 +36,8 @@ namespace Console.ViewModel.SatrtupViewModel
         [RelayCommand]
         async Task LoginAsync()
         {
-            if (!string.IsNullOrWhiteSpace(UserName)    
-                && !string.IsNullOrWhiteSpace(Password) 
+            if (!string.IsNullOrWhiteSpace(UserName)
+                && !string.IsNullOrWhiteSpace(Password)
                 && !string.IsNullOrWhiteSpace(IpAddr))
             {
                 var UserReserve = await loginReponsitory.Login(UserName, Password, IpAddr);

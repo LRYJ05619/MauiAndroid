@@ -5,11 +5,11 @@ namespace Console.View.Main;
 
 public partial class DevicePage : ContentPage
 {
-	public DevicePage(DevicePageViewModel devicePageViewModel)
-	{
-		InitializeComponent();
-		BindingContext = devicePageViewModel;
-	}
+    public DevicePage(DevicePageViewModel devicePageViewModel)
+    {
+        InitializeComponent();
+        BindingContext = devicePageViewModel;
+    }
     private static bool isBackPressed = false;
     private static System.Timers.Timer backButtonTimer = new System.Timers.Timer();
 

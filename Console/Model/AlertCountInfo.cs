@@ -1,12 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Console.Model
+﻿namespace Console.Model
 {
     //所需参数
     public class RequirdAkertsCount

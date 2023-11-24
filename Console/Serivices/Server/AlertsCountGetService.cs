@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Console.Model;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
-using Console.Model;
 
 namespace Console.Serivices.Server
 {
@@ -17,7 +12,7 @@ namespace Console.Serivices.Server
         {
             client = new HttpClient();
         }
-        
+
         public async Task<RequirdAkertsCount> AlertsCountGet(List<Project> projects, UserReserve reserve)
         {
             try

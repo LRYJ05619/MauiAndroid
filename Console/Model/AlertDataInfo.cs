@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Console.Model
+﻿namespace Console.Model
 {
     public class UntreatedAlertsData
     {
@@ -56,7 +49,7 @@ namespace Console.Model
         public AlertsDatumMetadata metadata { get; set; }
     }
     public class AlertsDatumMetadata
-    {   
+    {
         public string handler { get; set; }
         public string info { get; set; }
     }

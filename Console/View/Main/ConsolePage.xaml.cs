@@ -1,19 +1,12 @@
 using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core;
 using Console.ViewModel.MainViewModel;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.PlatformConfiguration;
-using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
-using static System.Net.Mime.MediaTypeNames;
-using Application = Microsoft.Maui.Controls.Application;
 
 namespace Console.View.Main;
 
 public partial class ConsolePage : ContentPage
 {
-	public ConsolePage(ConsolePageViewModel consolePageViewModel)
-	{
+    public ConsolePage(ConsolePageViewModel consolePageViewModel)
+    {
         InitializeComponent();
         BindingContext = consolePageViewModel;
     }

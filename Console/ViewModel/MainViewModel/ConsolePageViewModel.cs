@@ -1,21 +1,13 @@
-﻿using Console.Model;
-using Newtonsoft.Json;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using Console.Serivices;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using Console.Serivices.Interface;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Console.Serivices.Server;
+using LiveChartsCore;
 using LiveChartsCore.Defaults;
+using LiveChartsCore.Drawing;
 using LiveChartsCore.Measure;
 using LiveChartsCore.SkiaSharpView;
-using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
-using Android.Text;
-using LiveChartsCore.Drawing;
-using AndroidX.Lifecycle;
+using System.Collections.ObjectModel;
 
 namespace Console.ViewModel.MainViewModel
 {
@@ -73,11 +65,11 @@ namespace Console.ViewModel.MainViewModel
             };
 
             StatusSeries = new GaugeBuilder()
-                .WithLabelsSize(35)
+                .WithLabelsSize(10)
                 .WithLabelsPosition(PolarLabelsPosition.ChartCenter)
                 .WithLabelFormatter(point => $"在线比率\n   {DevicePollingValue.Value}%")
 
-                .WithInnerRadius(8)
+                .WithInnerRadius(37)
                 .WithMaxColumnWidth(25)
                 .WithBackground(null)
 
@@ -86,11 +78,11 @@ namespace Console.ViewModel.MainViewModel
                 .BuildSeries();
 
             SolveSeries = new GaugeBuilder()
-                .WithLabelsSize(35)
+                .WithLabelsSize(10)
                 .WithLabelsPosition(PolarLabelsPosition.ChartCenter)
                 .WithLabelFormatter(point => $"巡检比率\n {PollingValue.Value}%")
 
-                .WithInnerRadius(17)
+                .WithInnerRadius(35)
                 .WithMaxColumnWidth(25)
                 .WithBackground(null)
 
@@ -103,7 +95,7 @@ namespace Console.ViewModel.MainViewModel
             {
                 new PieSeries<ObservableValue>
                 {
-                    Values = new ObservableCollection<ObservableValue> { Allleave1Value }, 
+                    Values = new ObservableCollection<ObservableValue> { Allleave1Value },
                     InnerRadius = 42,
                     Name = "轻度预警",
                     Fill = new SolidColorPaint(SKColors.Yellow),
@@ -111,7 +103,7 @@ namespace Console.ViewModel.MainViewModel
 
                 new PieSeries<ObservableValue>
                 {
-                    Values = new ObservableCollection<ObservableValue> { Allleave2Value }, 
+                    Values = new ObservableCollection<ObservableValue> { Allleave2Value },
                     InnerRadius = 42,
                     Name = "中度预警",
                     Fill = new SolidColorPaint(SKColors.Orange),
@@ -121,7 +113,6 @@ namespace Console.ViewModel.MainViewModel
                 {
                     Values = new ObservableCollection<ObservableValue> { Allleave3Value },
                     InnerRadius = 42,
-                    MaxOuterRadius = 1.3,
                     Name = "重度预警",
                     Fill = new SolidColorPaint(SKColors.Red),
                 }

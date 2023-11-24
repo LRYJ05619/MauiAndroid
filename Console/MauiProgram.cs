@@ -1,37 +1,44 @@
-﻿using Microsoft.Extensions.Logging;
-using CommunityToolkit.Maui;
-using Console.View;
-using Console.ViewModel;
-using Console.View.Startup;
-using Console.ViewModel.SatrtupViewModel;
-using SkiaSharp.Views.Maui.Controls.Hosting;
+﻿using CommunityToolkit.Maui;
 using Console.Serivices.Server;
 using Console.View.Main;
 using Console.View.Other;
+using Console.View.Startup;
 using Console.ViewModel.MainViewModel;
 using Console.ViewModel.OtherViewModel;
-using Plugin.LocalNotification.AndroidOption;
-using Plugin.LocalNotification;
+using Console.ViewModel.SatrtupViewModel;
+using Microsoft.Extensions.Logging;
 using Microsoft.Maui.LifecycleEvents;
+using Plugin.LocalNotification;
+using Plugin.LocalNotification.AndroidOption;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Console;
 
 public static class MauiProgram
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
+    public static MauiApp CreateMauiApp()
+    {
+        var builder = MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
 
             .UseMauiCommunityToolkit()
             .UseSkiaSharp(true)
 
             .ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			})
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            })
+
+            //去掉entry下划线
+            .ConfigureMauiHandlers(handlers =>
+            {
+#if ANDROID
+                handlers.AddHandler(typeof(Entry), typeof(Console.Platforms.Android.MyEntryHandler));
+#endif
+            })
+
             //隐藏标题栏
             .ConfigureMauiHandlers(handlers =>
             {
@@ -98,6 +105,6 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
-	}
+        return builder.Build();
+    }
 }

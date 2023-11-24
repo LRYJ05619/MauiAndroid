@@ -1,13 +1,8 @@
 ﻿using AndroidX.AppCompat.Widget;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Console.Platforms.Android
 {
-    public class MyEntryHandler :Microsoft.Maui.Handlers.EntryHandler
+    public class MyEntryHandler : Microsoft.Maui.Handlers.EntryHandler
     {
         protected override void ConnectHandler(AppCompatEditText platformView)
         {

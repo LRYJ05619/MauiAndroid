@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Console.Serivices.Server;
 using Console.Model;
+using Console.Serivices.Server;
 using Console.View.Other;
 
 namespace Console.ViewModel.MainViewModel

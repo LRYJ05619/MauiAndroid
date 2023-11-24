@@ -1,6 +1,4 @@
-﻿using Android.Widget;
-using Console.Model;
-using Console.View;
+﻿using Console.Model;
 
 namespace Console;
 
@@ -8,9 +6,9 @@ public partial class App : Application
 {
     public static UserReserve UserReserve;
     public App()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+        MainPage = new AppShell();
+    }
 }

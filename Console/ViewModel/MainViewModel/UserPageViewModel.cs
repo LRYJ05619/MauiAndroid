@@ -1,8 +1,8 @@
-﻿using System.Diagnostics;
+﻿using Android.Content;
+using Android.Provider;
 using CommunityToolkit.Mvvm.Input;
 using Console.View.Startup;
-using Android.Content;
-using Android.Provider;
+using System.Diagnostics;
 
 namespace Console.ViewModel.MainViewModel
 {

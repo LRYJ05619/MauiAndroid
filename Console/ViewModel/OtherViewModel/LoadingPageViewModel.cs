@@ -1,13 +1,7 @@
 ﻿using Console.Model;
-using Console.View;
 using Console.View.Main;
 using Console.View.Startup;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Console.ViewModel.OtherViewModel
 {

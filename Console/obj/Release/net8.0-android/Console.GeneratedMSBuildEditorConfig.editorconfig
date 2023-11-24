@@ -1,0 +1,89 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Console
+build_property.ProjectDir = C:\Users\15569\Desktop\MauiAndroid\MauiAndroid\Console\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Main/ConsolePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Main.ConsolePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Main\ConsolePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Main\ConsolePage.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Main/DevicePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Main.DevicePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Main\DevicePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Main\DevicePage.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Main/NotifyPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Main.NotifyPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Main\NotifyPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Main\NotifyPage.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Main/UserPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Main.UserPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Main\UserPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Main\UserPage.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Other/ErrPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.ErrPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Other\ErrPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Other\ErrPage.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Other/LoadingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.LoadingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Other\LoadingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Other\LoadingPage.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Other/ProxyPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Other.ProxyPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Other\ProxyPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Other\ProxyPage.xaml
+
+[C:/Users/15569/Desktop/MauiAndroid/MauiAndroid/Console/View/Startup/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Console.View.Startup.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\Startup\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\Startup\LoginPage.xaml

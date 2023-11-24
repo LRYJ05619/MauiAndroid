@@ -1,9 +1,7 @@
 ﻿using Console.Model;
-using Console.Serivices.Interface;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http.Json;
-using static Android.Content.ClipData;
 
 namespace Console.Serivices.Server
 {

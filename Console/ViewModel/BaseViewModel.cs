@@ -2,21 +2,13 @@
 using CommunityToolkit.Mvvm.Input;
 using Console.Model;
 using Console.Serivices.Server;
-using Java.Util.Logging;
-using LiveChartsCore;
+using Console.View.Other;
 using LiveChartsCore.Defaults;
 using Newtonsoft.Json;
-using Plugin.LocalNotification.AndroidOption;
 using Plugin.LocalNotification;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using Plugin.LocalNotification.AndroidOption;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
-using System.Threading;
-using Android.App;
-using Console.View.Other;
 
 namespace Console.ViewModel
 {
@@ -27,7 +19,7 @@ namespace Console.ViewModel
         private bool isRefreshing;
 
         //在线状态
-        [ObservableProperty] 
+        [ObservableProperty]
         private DeviceStatuCount _deviceStatuCount = new DeviceStatuCount();
         //报警数量
         [ObservableProperty]
@@ -39,7 +31,7 @@ namespace Console.ViewModel
         //未处理
         [ObservableProperty]
         private List<TreatedAlertsData> _treated = new List<TreatedAlertsData>();
-        
+
         //ISD2180设备
         [ObservableProperty]
         private List<RequirdISD2180Info> _requirdISD2180Info = new List<RequirdISD2180Info>();
@@ -269,7 +261,8 @@ namespace Console.ViewModel
             if ("level1" == leave)
             {
                 return "轻度预警";
-            }else if ("level2" == leave)
+            }
+            else if ("level2" == leave)
             {
                 return "中度预警";
             }

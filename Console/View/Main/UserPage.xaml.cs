@@ -5,10 +5,10 @@ namespace Console.View.Main;
 
 public partial class UserPage : ContentPage
 {
-	public UserPage(UserPageViewModel userPageViewModel)
-	{
-		InitializeComponent();
-		this.BindingContext = userPageViewModel;
+    public UserPage(UserPageViewModel userPageViewModel)
+    {
+        InitializeComponent();
+        this.BindingContext = userPageViewModel;
     }
     private static bool isBackPressed = false;
     private static System.Timers.Timer backButtonTimer = new System.Timers.Timer();
